@@ -48,6 +48,7 @@ dependencies {
 
     ksp(projectLibs.theRouter.apt)
     implementation(projectLibs.theRouter.router)
+    implementation(projectLibs.splashscreen)
 
 
     testImplementation(projectLibs.test.junit)

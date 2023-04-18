@@ -28,5 +28,10 @@
         <item name="android:colorBackground">@color/white</item>
         <!--用于显示在背景色上方的元素的颜色-->
         <item name="colorOnBackground">@color/white</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+    <style name="Theme.Piece.FullScreen">
+        <item name="android:windowFullscreen">true</item>
     </style>
 </resources>
