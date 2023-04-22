@@ -22,6 +22,7 @@ dependencyResolutionManagement {
             version("applicationId", "com.timothy.piece")
             version("versionCode", "1")
             version("versionName", "1.0")
+            version("targetJava", "17")
         }
 
         create("projectLibs"){

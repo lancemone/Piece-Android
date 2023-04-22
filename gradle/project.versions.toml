@@ -11,7 +11,7 @@ lifecycle = "2.6.1"
 ksp = "1.8.20-1.0.10"
 kapt = "1.8.20"
 gradle = "8.1"
-theRouter = "1.1.2"
+theRouter = "1.1.4-beta1"
 coil = "2.3.0"
 okhttp3 = "4.10.0"
 retrofit2 = "2.9.0"
@@ -53,6 +53,7 @@ kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin-and
 ksp = {id = "com.google.devtools.ksp", version.ref = "ksp"}
 kotlinKapt = {id = "org.jetbrains.kotlin.kapt", version.ref = "kapt"}
 therouter = { id = "cn.therouter", version.ref = "theRouter"}
+kotlinParcelize = {id = "org.jetbrains.kotlin.plugin.parcelize", version = "1.8.20"}
 
 [bundles]
 

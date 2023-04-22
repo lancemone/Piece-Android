@@ -6,10 +6,6 @@ import kotlin.properties.Delegates
 
 abstract class FWKtxApplication : Application(){
 
-    private lateinit var _baseContext: Context
-
-    val baseContext get() = _baseContext
-
     override fun onCreate() {
         super.onCreate()
         _instance = this
@@ -17,7 +13,6 @@ abstract class FWKtxApplication : Application(){
 
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
-        _baseContext = base!!
     }
 
     companion object{

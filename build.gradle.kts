@@ -11,4 +11,5 @@ plugins {
     alias(projectLibs.plugins.kotlinAndroid) apply false
     alias(projectLibs.plugins.ksp) apply false
     alias(projectLibs.plugins.therouter) apply false
+    alias(projectLibs.plugins.kotlinParcelize) apply false
 }
