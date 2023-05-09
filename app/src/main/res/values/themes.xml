@@ -7,6 +7,6 @@
         <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_round</item>
         <!-- Set the theme of the Activity that directly follows your splash screen. -->
         <item name="postSplashScreenTheme">@style/Theme.Piece</item>
-        <item name="android:windowSplashScreenBrandingImage" tools:ignore="NewApi">@mipmap/ic_branding_image</item>
+        <item name="android:windowSplashScreenBrandingImage" tools:ignore="NewApi">@drawable/ic_branding_image</item>
     </style>
 </resources>
