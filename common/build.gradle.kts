@@ -41,9 +41,12 @@ android {
 dependencies {
 
     api(project(":base-framework-ktx"))
+    api(project(":library:network"))
     api(projectLibs.coil)
     api(projectLibs.gson)
-
     ksp(projectLibs.theRouter.apt)
-    implementation(projectLibs.theRouter.router)
+    api(projectLibs.theRouter.router)
+    api(projectLibs.androidx.startup)
+    implementation(projectLibs.retrofit2)
+    implementation(projectLibs.okhttp3Logging)
 }

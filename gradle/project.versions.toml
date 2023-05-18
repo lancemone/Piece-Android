@@ -13,7 +13,7 @@ kapt = "1.8.20"
 gradle = "8.1"
 theRouter = "1.1.4-beta1"
 coil = "2.3.0"
-okhttp3 = "4.10.0"
+okhttp3 = "4.11.0"
 retrofit2 = "2.9.0"
 kotlin-coroutines = "1.6.4"
 
@@ -34,12 +34,16 @@ constraintlayout = 'androidx.constraintlayout:constraintlayout:2.1.4'
 coordinatorlayout = 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
 theRouter-router = {module = "cn.therouter:router", version.ref = "theRouter"}
 theRouter-apt = {module = "cn.therouter:apt", version.ref = "theRouter"}
+androidx-annotation = 'androidx.annotation:annotation:1.6.0'
+androidx-startup = 'androidx.startup:startup-runtime:1.1.1'
 
 coil = 'io.coil-kt:coil:2.3.0'      # Kotlin 协程图片加载库
-okhttp3 = {module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp3"}
+okhttp3 = {module = 'com.squareup.okhttp3:okhttp', version.ref = "okhttp3"}
 okhttp3Logging = {module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp3"}
 retrofit2 = {module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit2"}
 retrofit2Gson = {module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit2"}
+retrofit2RxJava2 = {module = 'com.squareup.retrofit2:adapter-rxjava2', version.ref = "retrofit2"}
+retrofit2RxJava3 = {module = 'com.squareup.retrofit2:adapter-rxjava3', version.ref = "retrofit2"}
 gson = 'com.google.code.gson:gson:2.10.1'
 
 datastorePreferences = 'androidx.datastore:datastore-preferences:1.0.0'

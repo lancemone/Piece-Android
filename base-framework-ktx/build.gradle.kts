@@ -49,4 +49,5 @@ dependencies {
     api(projectLibs.ktx.coroutines)
     api(projectLibs.ktx.coroutinesAndroid)
     api(projectLibs.datastorePreferences)
+    api(projectLibs.androidx.annotation)
 }

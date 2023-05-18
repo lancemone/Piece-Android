@@ -1,3 +1,4 @@
+include(":library")
 
 pluginManagement {
     repositories {
@@ -35,4 +36,4 @@ rootProject.name = "Piece"
 include(":app")
 include(":common")
 include(":base-framework-ktx")
- 
+include(":library:network")

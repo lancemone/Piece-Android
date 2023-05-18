@@ -19,10 +19,3 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
-
--keep class com.timothy.framework.ktx.data.IKeep
--keep class * implements com.timothy.framework.ktx.data.IKeep
-
--keepnames class * implements android.os.Parcelable {
-    public static final ** CREATOR;
-}

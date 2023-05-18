@@ -10,10 +10,13 @@ import androidx.core.animation.doOnEnd
 import androidx.core.splashscreen.SplashScreen
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.splashscreen.SplashScreenViewProvider
+import androidx.lifecycle.flowWithLifecycle
 import com.therouter.router.Route
 import com.timothy.common.base.BaseActivity
 import com.timothy.common.router.RouterPath
 import com.timothy.piece.vm.MainViewModel
+import kotlinx.coroutines.flow.callbackFlow
+import kotlinx.coroutines.flow.flowOf
 
 @Route(path = RouterPath.path_app_main)
 class MainActivity : BaseActivity(), SplashScreen.OnExitAnimationListener{

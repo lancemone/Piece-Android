@@ -2,10 +2,7 @@ package com.timothy.framework.ktx.event
 
 import android.util.Log
 import androidx.lifecycle.DefaultLifecycleObserver
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.channels.BufferOverflow
@@ -16,12 +13,13 @@ import kotlinx.coroutines.launch
 @Suppress("UNCHECKED_CAST")
 object FlowEventBus {
 
+
     private const val TAG = "FlowEvent"
     private val busMap = mutableMapOf<String, EventBus<*>>()
     private val busStickMap = mutableMapOf<String, StickEventBus<*>>()
 
     @Synchronized
-    fun <T> with(key: String): EventBus<T> {
+    fun <T : KTEvent> with(key: String): EventBus<T> {
         var eventBus = busMap[key]
         if (eventBus == null) {
             eventBus = EventBus<T>(key)
@@ -31,7 +29,7 @@ object FlowEventBus {
     }
 
     @Synchronized
-    fun <T> withStick(key: String): StickEventBus<T> {
+    fun <T : KTEvent> withStick(key: String): StickEventBus<T> {
         var eventBus = busStickMap[key]
         if (eventBus == null) {
             eventBus = StickEventBus<T>(key)
@@ -41,7 +39,7 @@ object FlowEventBus {
     }
 
     //真正实现类
-    open class EventBus<T>(private val key: String) : DefaultLifecycleObserver {
+    open class EventBus<T : KTEvent>(private val key: String) : DefaultLifecycleObserver {
 
         //私有对象用于发送消息
         private val _events: MutableSharedFlow<T> by lazy {
@@ -92,7 +90,7 @@ object FlowEventBus {
     }
 
     // 粘性消息
-    class StickEventBus<T>(key: String) : EventBus<T>(key) {
+    class StickEventBus<T: KTEvent>(key: String) : EventBus<T>(key) {
         override fun obtainEvent(): MutableSharedFlow<T> = MutableSharedFlow(1, 1, BufferOverflow.DROP_OLDEST)
     }
 }

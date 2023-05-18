@@ -29,14 +29,15 @@ object DataStoreFactory {
             )
         })
 
-    fun getDefaultPreferences() = defaultDataStore
+    fun getDefaultPreferences(): DataStoreBasePreferences{
+        if (this::defaultDataStore.isInitialized.not()) {
+            defaultDataStore = createPreferencesDataStore(USER_PREFERENCES)
+        }
+        return defaultDataStore
+    }
 
     fun getPreferencesDataStore(name: String) =
         createPreferencesDataStore(name)
-
-    fun init(context: Context) {
-        initDefaultPreferencesDataStore()
-    }
 
     private fun initDefaultPreferencesDataStore() {
         if (this::defaultDataStore.isInitialized.not()) {
