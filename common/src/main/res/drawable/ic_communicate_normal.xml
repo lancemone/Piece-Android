@@ -1,0 +1,21 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+  <group>
+    <clip-path
+        android:pathData="M0,0h24v24h-24z"/>
+    <path
+        android:strokeWidth="1"
+        android:pathData="M12,12m-11.5,0a11.5,11.5 0,1 1,23 0a11.5,11.5 0,1 1,-23 0"
+        android:fillColor="#00000000"
+        android:strokeColor="@color/md_theme_tertiary"/>
+    <path
+        android:pathData="M7.646,19.354C7.842,19.549 8.158,19.549 8.354,19.354L11.535,16.172C11.731,15.976 11.731,15.66 11.535,15.465C11.34,15.269 11.024,15.269 10.828,15.465L8,18.293L5.172,15.465C4.976,15.269 4.66,15.269 4.464,15.465C4.269,15.66 4.269,15.976 4.464,16.172L7.646,19.354ZM7.5,5L7.5,19H8.5V5H7.5Z"
+        android:fillColor="@color/md_theme_tertiary"/>
+    <path
+        android:pathData="M15.354,4.646C15.158,4.451 14.842,4.451 14.646,4.646L11.465,7.828C11.269,8.024 11.269,8.34 11.465,8.536C11.66,8.731 11.976,8.731 12.172,8.536L15,5.707L17.828,8.536C18.024,8.731 18.34,8.731 18.535,8.536C18.731,8.34 18.731,8.024 18.535,7.828L15.354,4.646ZM15.5,19V5H14.5V19H15.5Z"
+        android:fillColor="@color/md_theme_tertiary"/>
+  </group>
+</vector>

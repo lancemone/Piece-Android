@@ -1,40 +1,69 @@
 package com.timothy.piece
 
 import android.animation.ObjectAnimator
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.animation.AnticipateInterpolator
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.animation.doOnEnd
 import androidx.core.splashscreen.SplashScreen
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.splashscreen.SplashScreenViewProvider
-import androidx.lifecycle.flowWithLifecycle
-import com.therouter.router.Route
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import com.timothy.common.base.BaseActivity
-import com.timothy.common.router.RouterPath
+import com.timothy.common.lifecyc.FragmentLifecycleManager
+import com.timothy.framework.ktx.utils.StatusBarUtil
+import com.timothy.piece.databinding.ActivityMainBinding
 import com.timothy.piece.vm.MainViewModel
-import kotlinx.coroutines.flow.callbackFlow
-import kotlinx.coroutines.flow.flowOf
 
-@Route(path = RouterPath.path_app_main)
-class MainActivity : BaseActivity(), SplashScreen.OnExitAnimationListener{
+//@Route(path = RouterPath.path_app_main)
+class MainActivity : BaseActivity(), SplashScreen.OnExitAnimationListener {
 
-    private val viewModel:MainViewModel by viewModels<MainViewModel>()
+    private val viewModel: MainViewModel by viewModels<MainViewModel>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        val splashScreen = installSplashScreen()
-        splashScreen.setOnExitAnimationListener(this)
-        splashScreen.setKeepOnScreenCondition {
-            Log.d("Routing", "Routing splashScreen KeepOnScreenCondition")
-            !viewModel.isDataReady.get()
-        }
-        super.onCreate(savedInstanceState)
-        viewModel.initData()
+//    private lateinit var navController: NavController
+
+    private val binding: ActivityMainBinding by lazy {
+        ActivityMainBinding.inflate(layoutInflater)
     }
 
-    private fun whenReady(){
+    override fun onCreate(savedInstanceState: Bundle?) {
+//        val splashScreen = installSplashScreen()
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+        StatusBarUtil.setTransparent(this)
+        val fragment = supportFragmentManager.findFragmentById(R.id.main_content) as NavHostFragment
+        navController = fragment.navController
+        fragment.childFragmentManager.registerFragmentLifecycleCallbacks(
+            FragmentLifecycleManager.get(),
+            false
+        )
+        viewModel.initData()
+        //        splashScreen.setOnExitAnimationListener(this)
+//        splashScreen.setKeepOnScreenCondition {
+//            Log.d("Routing", "Routing splashScreen KeepOnScreenCondition")
+//            !viewModel.isDataReady.get()
+//        }
+
+//        supportFragmentManager.registerFragmentLifecycleCallbacks(
+//            FragmentLifecycleManager.get(),
+//            false
+//        )
+
+        navController?.addOnDestinationChangedListener(mDestinationChangedListener)
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        supportFragmentManager.unregisterFragmentLifecycleCallbacks(FragmentLifecycleManager.get())
+        navController?.removeOnDestinationChangedListener(mDestinationChangedListener)
     }
 
 
@@ -52,10 +81,18 @@ class MainActivity : BaseActivity(), SplashScreen.OnExitAnimationListener{
         // Call SplashScreenView.remove at the end of your custom animation.
         slideUp.doOnEnd {
             splashScreenViewProvider.remove()
-            whenReady()
         }
 
         // Run your animation.
         slideUp.start()
+    }
+
+    companion object{
+        var navController: NavController? = null
+        private val mDestinationChangedListener =
+            NavController.OnDestinationChangedListener { controller, destination, arguments ->
+                Toast.makeText(controller.context, "destination=${destination.label}", Toast.LENGTH_SHORT).show()
+                Log.d("Route", "onDestinationChanged destination=$destination")
+            }
     }
 }

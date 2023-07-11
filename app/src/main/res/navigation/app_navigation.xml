@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/fragmentAppNewComerGuide">
+
+    <action
+        android:id="@id/action_global_main"
+        app:destination="@id/fragmentAppMain"
+        app:launchSingleTop="true" />
+
+    <fragment
+        android:id="@id/fragmentAppMain"
+        android:name="com.timothy.piece.fragment.MainFragment"
+        tools:layout="@layout/fragment_main"
+        android:label="MainFragment">
+
+        <deepLink app:uri="@string/link_main_fragment"/>
+
+        <action app:destination="@id/fragmentAppNewComerGuide"
+            android:id="@id/actionHomeToNewComer" />
+
+        <action android:id="@id/action_global_fragmentLinearLayout"
+            app:destination="@id/fragmentLinearLayout"/>
+    </fragment>
+
+    <fragment
+        android:id="@id/fragmentAppNewComerGuide"
+        android:name="com.timothy.piece.ui.NewComerGuideFragment"
+        tools:layout="@layout/fragment_new_comer"
+        android:label="NewComerGuideFragment">
+
+        <deepLink app:uri="@string/link_new_comer"/>
+    </fragment>
+</navigation>

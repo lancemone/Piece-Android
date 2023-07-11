@@ -1,5 +1,3 @@
-include(":library")
-
 pluginManagement {
     repositories {
         google()
@@ -37,3 +35,8 @@ include(":app")
 include(":common")
 include(":base-framework-ktx")
 include(":library:network")
+include(":feature")
+include(":feature:compose")
+include(":feature:login")
+include(":feature:ui")
+include(":library:nativelib")

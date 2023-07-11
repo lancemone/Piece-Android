@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="components">组件</string>
+    <string name="home">首页</string>
+    <string name="explore">探索</string>
+    <string name="network">网络</string>
+    <string name="data">数据</string>
+    <string name="communicate">通信</string>
+    <string name="compose">Compose</string>
+    <string name="ui">界面</string>
+    <string name="system">系统</string>
+    <string name="other">其他</string>
+</resources>

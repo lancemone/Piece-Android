@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="link_main_fragment" translatable="false">piece://piece/app/main_fragment</string>
+    <string name="link_main_home" translatable="false">piece://piece/app/main_home</string>
+    <string name="link_new_comer" translatable="false">piece://piece/app/new_comer</string>
+</resources>

@@ -14,15 +14,20 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+        resourceConfigurations += setOf()
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+
+        debug {
+            isMinifyEnabled = false
         }
 
         dataBinding {
@@ -44,9 +49,15 @@ dependencies {
     api(project(":library:network"))
     api(projectLibs.coil)
     api(projectLibs.gson)
-    ksp(projectLibs.theRouter.apt)
-    api(projectLibs.theRouter.router)
-    api(projectLibs.androidx.startup)
+//    ksp(projectLibs.theRouter.apt)
+//    api(projectLibs.theRouter.router)
+//    api(projectLibs.androidx.startup)
     implementation(projectLibs.retrofit2)
     implementation(projectLibs.okhttp3Logging)
+
+    compileOnly(projectLibs.androidx.navigationSafeArgsGenerator)
+    api(projectLibs.androidx.navigationUI)
+    api(projectLibs.androidx.navigationFragment)
+    api(projectLibs.androidx.navigationDynamicFragment)
+    api(projectLibs.androidx.navigationDynamicRuntime)
 }

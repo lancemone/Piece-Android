@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".PieceApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -15,20 +16,19 @@
         tools:targetApi="33"
         tools:ignore="LockedOrientationActivity">
 
-        <activity android:name=".ui.IntroductionActivity"
-            android:screenOrientation="portrait">
-        </activity>
-
+<!--        android:theme="@style/Theme.App.Splash"-->
         <activity android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.App.Splash"
             android:launchMode="singleTask">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+
+<!--            启用隐式深层链接-->
+            <nav-graph android:value="@navigation/main_navigation"/>
 
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>

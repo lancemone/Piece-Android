@@ -3,10 +3,26 @@ plugins {
     alias(projectLibs.plugins.kotlinAndroid)
     alias(projectLibs.plugins.ksp)
     alias(projectLibs.plugins.kotlinParcelize)
-    id ("therouter")
+//    id ("therouter")
+    alias(projectLibs.plugins.navigationSafeArgsPlugin)
 }
 
 android {
+    signingConfigs {
+        getByName("debug") {
+            storeFile = file("piece_release.keystore")
+            storePassword = "URHwhw@tea0vzt5pvp"
+            keyPassword = "URHwhw@tea0vzt5pvp"
+            keyAlias = "key_sounding"
+        }
+
+        create("release") {
+            storePassword = "URHwhw@tea0vzt5pvp"
+            keyPassword = "URHwhw@tea0vzt5pvp"
+            storeFile = file("/Users/tao/code/Android/Piece-Android/app/piece_release.keystore")
+            keyAlias = "key_sounding"
+        }
+    }
     namespace = "com.timothy.piece"
     compileSdk = androidLibs.versions.compileSdk.get().toInt()
 
@@ -23,14 +39,26 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            isDebuggable = false
+            signingConfig = signingConfigs.getByName("release")
+        }
+        debug {
+            signingConfig = signingConfigs.getByName("debug")
+            isMinifyEnabled = true
+            isShrinkResources = true
         }
 
         dataBinding {
+            enable = true
+        }
+
+        viewBinding {
             enable = true
         }
     }
@@ -46,14 +74,16 @@ android {
 
 dependencies {
 
-    implementation(project(":common"))
+    implementation(project(path = ":common"))
+    implementation(project(path = ":feature:ui"))
+    implementation(project(path = ":library:nativelib"))
 
-    ksp(projectLibs.theRouter.apt)
-    implementation(projectLibs.theRouter.router)
+//    ksp(projectLibs.theRouter.apt)
+//    implementation(projectLibs.theRouter.router)
     implementation(projectLibs.splashscreen)
-
+    implementation(projectLibs.androidx.multidex)
 
     testImplementation(projectLibs.test.junit)
-    androidTestImplementation(projectLibs.test.ext.junit)
-    androidTestImplementation(projectLibs.test.espresso.core)
+    androidTestImplementation(projectLibs.test.extJunit)
+    androidTestImplementation(projectLibs.test.espressoCore)
 }

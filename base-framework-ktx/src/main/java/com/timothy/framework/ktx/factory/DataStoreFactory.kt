@@ -36,7 +36,7 @@ object DataStoreFactory {
         return defaultDataStore
     }
 
-    fun getPreferencesDataStore(name: String) =
+    fun getPreferencesDataStore(name: String, context: Context = FWKtxApplication.application) =
         createPreferencesDataStore(name)
 
     private fun initDefaultPreferencesDataStore() {
@@ -45,7 +45,7 @@ object DataStoreFactory {
         }
     }
 
-    private fun createPreferencesDataStore(name: String): DataStoreBasePreferences {
+    private fun createPreferencesDataStore(name: String, context: Context = FWKtxApplication.application): DataStoreBasePreferences {
         if (dataStoreMaps.containsKey(name)) {
             return dataStoreMaps[name]!!
         }
@@ -56,12 +56,12 @@ object DataStoreFactory {
                 ),
                 migrations = listOf(
                     SharedPreferencesMigration(
-                        FWKtxApplication.application,
+                        context,
                         name
                     )
                 ),
                 applicationScope,
-                produceFile = { FWKtxApplication.application.preferencesDataStoreFile(name) }
+                produceFile = { context.preferencesDataStoreFile(name) }
             )
         )
         dataStoreMaps[name] = preferences

@@ -2,6 +2,7 @@
 
 buildscript {
     dependencies {
+        classpath(projectLibs.buildGradle)
     }
 }
 
@@ -10,7 +11,8 @@ plugins {
     alias(projectLibs.plugins.androidLibrary) apply false
     alias(projectLibs.plugins.kotlinAndroid) apply false
     alias(projectLibs.plugins.ksp) apply false
-    alias(projectLibs.plugins.therouter) apply false
+//    alias(projectLibs.plugins.therouter) apply false
     alias(projectLibs.plugins.kotlinParcelize) apply false
-    id("org.jetbrains.kotlin.jvm") version "1.8.20" apply false
+    alias(projectLibs.plugins.kotlinJvm) apply false
+    alias(projectLibs.plugins.navigationSafeArgsPlugin) apply false
 }

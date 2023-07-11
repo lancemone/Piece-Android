@@ -12,6 +12,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+        multiDexEnabled = true
     }
 
     buildTypes {
@@ -38,16 +39,8 @@ android {
 
 dependencies {
 
-    api(projectLibs.ktx.core)
-    api(projectLibs.appcompat)
-    api(projectLibs.material)
-    api(projectLibs.recycleview)
-    api(projectLibs.constraintlayout)
-    api(projectLibs.ktx.lifecycle)
-    api(projectLibs.ktx.activity)
-    api(projectLibs.ktx.fragment)
-    api(projectLibs.ktx.coroutines)
-    api(projectLibs.ktx.coroutinesAndroid)
+    api(projectLibs.bundles.androidCore)
+    api(projectLibs.bundles.ktxAndroid)
     api(projectLibs.datastorePreferences)
-    api(projectLibs.androidx.annotation)
+    api(projectLibs.androidx.window)
 }

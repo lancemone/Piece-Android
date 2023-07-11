@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
+        android:scrollbars="none"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:id="@+id/main_bottom_nav"
+        app:labelVisibilityMode="labeled"
+        android:background="@color/md_theme_background"
+        app:itemIconSize="24dp"
+        app:itemTextColor="@color/color_bottom_nav_text"
+        app:itemActiveIndicatorStyle="@color/transparent"
+        app:menu="@menu/main_fragment_bottom_menu"
+        app:itemHorizontalTranslationEnabled="false" />
+</androidx.appcompat.widget.LinearLayoutCompat>

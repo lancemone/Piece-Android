@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="route_fragment_linear_layout" tools:ignore="MissingTranslation">/feature/ui/fragment_linear_layout</string>
+</resources>

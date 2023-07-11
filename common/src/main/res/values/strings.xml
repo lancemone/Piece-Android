@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">Piece</string>
+    <string name="app_name" translatable="false">Piece</string>
+    <string name="components">Components</string>
+    <string name="home">Home</string>
+    <string name="explore">Explore</string>
+    <string name="data">Data</string>
+    <string name="network">Network</string>
+    <string name="communicate">Communicate</string>
+    <string name="compose">Compose</string>
+    <string name="ui">UI</string>
+    <string name="system">System</string>
+    <string name="other">Other</string>
+    <string name="layout">Layout</string>
 </resources>
