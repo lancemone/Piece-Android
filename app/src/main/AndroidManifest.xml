@@ -28,7 +28,7 @@
             </intent-filter>
 
 <!--            启用隐式深层链接-->
-            <nav-graph android:value="@navigation/main_navigation"/>
+            <nav-graph android:value="@navigation/app_navigation"/>
 
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>

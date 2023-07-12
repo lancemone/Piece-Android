@@ -23,17 +23,13 @@ android {
                 "proguard-rules.pro"
             )
         }
-
-        dataBinding {
-            enable = true
-        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = androidLibs.versions.targetJava.get()
     }
 }
 

@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <item name="navigation_app_module" type="id"/>
+    <item name="navigation_app" type="id"/>
+    <item name="navigation_home_ui" type="id"/>
+    <item name="navigation_home_system" type="id"/>
 
-    <item name="fragmentAppMain" type="id"/>
-    <item name="fragmentAppHome" type="id"/>
+    <item name="fragmentAppHomeUI" type="id"/>
+    <item name="fragmentAppHomeSystem" type="id"/>
+    <item name="fragmentAppHomeData" type="id"/>
+    <item name="fragmentAppHomeOther" type="id"/>
     <item name="fragmentAppNewComerGuide" type="id"/>
 
     <item name="fragmentLinearLayout" type="id"/>
+
+    <item name="fragmentSettings" type="id"/>
 
     <item name="action_global_main" type="id"/>
     <item name="actionToAppHome" type="id"/>

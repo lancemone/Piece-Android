@@ -2,35 +2,59 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/app_navigation"
-    app:startDestination="@id/fragmentAppNewComerGuide">
+    android:id="@id/navigation_app"
+    app:startDestination="@id/fragmentAppHomeUI">
 
-    <action
-        android:id="@id/action_global_main"
-        app:destination="@id/fragmentAppMain"
-        app:launchSingleTop="true" />
-
-    <fragment
-        android:id="@id/fragmentAppMain"
-        android:name="com.timothy.piece.fragment.MainFragment"
-        tools:layout="@layout/fragment_main"
-        android:label="MainFragment">
-
-        <deepLink app:uri="@string/link_main_fragment"/>
-
-        <action app:destination="@id/fragmentAppNewComerGuide"
-            android:id="@id/actionHomeToNewComer" />
-
-        <action android:id="@id/action_global_fragmentLinearLayout"
-            app:destination="@id/fragmentLinearLayout"/>
+    <fragment android:id="@id/fragmentAppHomeUI"
+        android:name="com.timothy.piece.fragment.HomeUiFragment"
+        android:label="@string/ui"
+        tools:layout="@layout/fragment_home_system">
     </fragment>
 
-    <fragment
-        android:id="@id/fragmentAppNewComerGuide"
-        android:name="com.timothy.piece.ui.NewComerGuideFragment"
-        tools:layout="@layout/fragment_new_comer"
-        android:label="NewComerGuideFragment">
+    <fragment android:id="@id/fragmentAppHomeSystem"
+        android:name="com.timothy.piece.fragment.HomeSystemFragment"
+        tools:layout="@layout/fragment_home_system"
+        android:label="@string/system"/>
 
-        <deepLink app:uri="@string/link_new_comer"/>
-    </fragment>
+    <fragment android:id="@id/fragmentAppHomeData"
+        android:name="com.timothy.piece.fragment.HomeSystemFragment"
+        tools:layout="@layout/fragment_home_system"
+        android:label="@string/data"/>
+
+    <fragment android:id="@id/fragmentAppHomeOther"
+        android:name="com.timothy.piece.fragment.HomeSystemFragment"
+        tools:layout="@layout/fragment_home_system"
+        android:label="@string/other"/>
+
+    <fragment android:id="@id/fragmentSettings"
+        android:name="com.timothy.piece.fragment.AppSettingsFragment"
+        android:label="@string/settings"/>
+<!--    <action-->
+<!--        android:id="@id/action_global_main"-->
+<!--        app:destination="@id/fragmentAppMain"-->
+<!--        app:launchSingleTop="true" />-->
+
+<!--    <fragment-->
+<!--        android:id="@id/fragmentAppMain"-->
+<!--        android:name="com.timothy.piece.fragment.MainFragment"-->
+<!--        tools:layout="@layout/fragment_main"-->
+<!--        android:label="MainFragment">-->
+
+<!--        <deepLink app:uri="@string/link_main_fragment"/>-->
+
+<!--        <action app:destination="@id/fragmentAppNewComerGuide"-->
+<!--            android:id="@id/actionHomeToNewComer" />-->
+
+<!--        <action android:id="@id/action_global_fragmentLinearLayout"-->
+<!--            app:destination="@id/fragmentLinearLayout"/>-->
+<!--    </fragment>-->
+
+<!--    <fragment-->
+<!--        android:id="@id/fragmentAppNewComerGuide"-->
+<!--        android:name="com.timothy.piece.ui.NewComerGuideFragment"-->
+<!--        tools:layout="@layout/fragment_new_comer"-->
+<!--        android:label="NewComerGuideFragment">-->
+
+<!--        <deepLink app:uri="@string/link_new_comer"/>-->
+<!--    </fragment>-->
 </navigation>

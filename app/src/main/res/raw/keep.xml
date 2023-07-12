@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--打开isShrinkResources需要在此添加忽略和保持的资源文件-->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:shrinkMode="safe"
+    tools:keep="@layout/activity_main,@layout/fragment_main"/>

@@ -5,12 +5,11 @@ import com.timothy.common.base.BaseFragment
 
 /**
  * @Project: Piece
- * @ClassPath:  com.timothy.piece.fragment.ComponentsFragment
+ * @ClassPath:  com.timothy.piece.fragment.AppSettingsFragment
  * @Author: MoTao
- * @Date: 2023-06-02
+ * @Date: 2023-07-12
  * <p>
  * <p/>
  */
-
-class MainDataFragment : BaseFragment(){
+class AppSettingsFragment: BaseFragment() {
 }

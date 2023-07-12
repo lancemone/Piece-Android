@@ -46,9 +46,12 @@
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Material3.SmallComponent</item>
         <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Material3.MediumComponent</item>
         <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Material3.LargeComponent</item>
-        
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="statusBarBackground">@android:color/transparent</item>
+
+        <item name="navigationViewStyle">@style/Piece.App.NavigationView</item>
+<!--        <item name="android:statusBarColor">@android:color/transparent</item>-->
+<!--        <item name="statusBarBackground">@android:color/transparent</item>-->
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
     <style name="Theme.Piece.FullScreen">

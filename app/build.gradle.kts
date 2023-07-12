@@ -33,6 +33,8 @@ android {
         versionCode = androidLibs.versions.versionCode.get().toInt()
         versionName = androidLibs.versions.versionName.get()
 
+        resourceConfigurations.addAll(listOf("en", "zh"))
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled = true
     }
@@ -51,12 +53,12 @@ android {
         debug {
             signingConfig = signingConfigs.getByName("debug")
             isMinifyEnabled = true
-            isShrinkResources = true
+            isShrinkResources = false
         }
 
-        dataBinding {
-            enable = true
-        }
+//        dataBinding {
+//            enable = true
+//        }
 
         viewBinding {
             enable = true

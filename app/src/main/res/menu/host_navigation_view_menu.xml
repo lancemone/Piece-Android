@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/main_items"
+        android:title="">
+        <menu>
+            <item android:id="@id/fragmentAppHomeUI"
+                android:title="@string/ui"
+                android:icon="@drawable/selector_tab_home" />
+
+            <item android:id="@id/fragmentAppHomeSystem"
+                android:title="@string/system"
+                android:icon="@drawable/selector_tab_explore" />
+
+            <item android:id="@id/fragmentAppHomeData"
+                android:title="@string/data"
+                android:icon="@drawable/selector_tab_communicate" />
+
+            <item android:id="@id/fragmentAppHomeOther"
+                android:title="@string/other"
+                android:icon="@drawable/selector_tab_components" />
+        </menu>
+    </item>
+
+    <item android:id="@+id/setting_items"
+        android:title="">
+        <menu>
+            <item android:id="@id/fragmentSettings"
+                android:title="@string/settings"/>
+        </menu>
+    </item>
+</menu>

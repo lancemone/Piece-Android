@@ -10,4 +10,7 @@
     <string name="ui">界面</string>
     <string name="system">系统</string>
     <string name="other">其他</string>
+    <string name="layout">布局</string>
+    <string name="slogan">做更好的自己</string>
+    <string name="settings">设置</string>
 </resources>
