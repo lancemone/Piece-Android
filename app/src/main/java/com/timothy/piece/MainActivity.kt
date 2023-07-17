@@ -14,16 +14,16 @@ import androidx.core.splashscreen.SplashScreenViewProvider
 import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.appbar.MaterialToolbar
-import com.google.android.material.navigation.NavigationView
+import com.timothy.authentication.helper.BiometricHelper
 import com.timothy.common.base.BaseActivity
 import com.timothy.common.lifecyc.FragmentLifecycleManager
+import com.timothy.feature.ui.databinding.HomeNavViewHeaderBinding
 import com.timothy.piece.databinding.ActivityMainBinding
 import com.timothy.piece.vm.MainViewModel
-import com.timothy.common.R as CR
 
 //@Route(path = RouterPath.path_app_main)
 class MainActivity : BaseActivity(), SplashScreen.OnExitAnimationListener {
@@ -34,35 +34,52 @@ class MainActivity : BaseActivity(), SplashScreen.OnExitAnimationListener {
         ActivityMainBinding.inflate(layoutInflater)
     }
 
-    private lateinit var navController: NavController
-
-    private val appBarConfiguration: AppBarConfiguration by lazy {
-        AppBarConfiguration(
-            topLevelDestinationIds = setOf(R.id.fragmentAppHomeUI, R.id.fragmentAppHomeSystem, R.id.fragmentAppHomeData, R.id.fragmentAppHomeOther),
-            drawerLayout = binding.hostDrawer
-        )
+    private val navHeaderBinding: HomeNavViewHeaderBinding by lazy {
+        HomeNavViewHeaderBinding.inflate(layoutInflater)
     }
 
-    private var mDestinationChangedListener:NavController.OnDestinationChangedListener? = null
+    private lateinit var navController: NavController
+
+    private var mDestinationChangedListener: NavController.OnDestinationChangedListener =
+        NavController.OnDestinationChangedListener { controller, destination, _ ->
+            Toast.makeText(
+                controller.context,
+                "destination=${destination.label}",
+                Toast.LENGTH_SHORT
+            ).show()
+            // 顶级导航时使用activity的ToolBar
+        binding.hostToolBar.isVisible = appBarConfiguration.isTopLevelDestination(destination=destination)
+
+        binding.hostDrawer.setDrawerLockMode(   // 非顶级导航页面时锁定Drawer
+            if (appBarConfiguration.isTopLevelDestination(destination = destination))
+                DrawerLayout.LOCK_MODE_UNLOCKED
+            else
+                DrawerLayout.LOCK_MODE_LOCKED_CLOSED
+        )
+            Log.d("Route", "onDestinationChanged destination=$destination")
+        }
+
+    private val appBarConfiguration: AppBarConfiguration by lazy {
+//        AppBarConfiguration(
+//            topLevelDestinationIds = setOf(R.id.fragmentAppHomeUI),
+//            drawerLayout = binding.homeDrawer
+//        ){
+//            true
+//        }
+        AppBarConfiguration(navController.graph, binding.hostDrawer)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
 //        val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+//        setSupportActionBar(binding.hostToolBar)
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
-        mDestinationChangedListener = NavController.OnDestinationChangedListener { controller, destination, _ ->
-            Toast.makeText(controller.context, "destination=${destination.label}", Toast.LENGTH_SHORT).show()
-            // 顶级导航时使用activity的ToolBar
-            binding.hostToolBar.isVisible = appBarConfiguration.isTopLevelDestination(destination=destination)
-
-            binding.hostDrawer.setDrawerLockMode(   // 非顶级导航页面时锁定Drawer
-                if (appBarConfiguration.isTopLevelDestination(destination=destination)) DrawerLayout.LOCK_MODE_UNLOCKED else DrawerLayout.LOCK_MODE_LOCKED_OPEN
-            )
-            Log.d("Route", "onDestinationChanged destination=$destination;isTopLevelDestination=${appBarConfiguration.isTopLevelDestination(destination=destination)}")
-        }
-        mDestinationChangedListener?.let { navController.addOnDestinationChangedListener(it) }
-
+        navController.addOnDestinationChangedListener(mDestinationChangedListener)
+//        val appBarConfiguration = AppBarConfiguration.Builder(navController.graph).build()
+//        setupActionBarWithNavController(navController, appBarConfiguration)
         navHostFragment.childFragmentManager.registerFragmentLifecycleCallbacks(
             FragmentLifecycleManager.get(),
             false
@@ -74,13 +91,26 @@ class MainActivity : BaseActivity(), SplashScreen.OnExitAnimationListener {
 //            !viewModel.isDataReady.get()
 //        }
 
-//        supportFragmentManager.registerFragmentLifecycleCallbacks(
-//            FragmentLifecycleManager.get(),
-//            false
-//        )
-
+        supportFragmentManager.registerFragmentLifecycleCallbacks(
+            FragmentLifecycleManager.get(),
+            false
+        )
+        binding.navView.addHeaderView(navHeaderBinding.root)
         binding.navView.setupWithNavController(navController)
-        binding.hostToolBar.setupWithNavController(navController = navController, configuration = appBarConfiguration)
+        binding.hostToolBar.setupWithNavController(
+            navController = navController,
+            configuration = appBarConfiguration
+        )
+
+        navController.navigate(R.id.action_main_to_authentication)
+//        navController.navigate(
+//            resId = R.id.fragmentAuthentication,
+//            args = null,
+//            navOptions = NavOptions.Builder()
+//                .setPopUpTo(route = getString(R.string.route_fragment_home_ui), inclusive = true, saveState = true)
+//                .setLaunchSingleTop(true)
+//                .build()
+//        )
     }
 
     override fun onNewIntent(intent: Intent?) {
@@ -90,7 +120,7 @@ class MainActivity : BaseActivity(), SplashScreen.OnExitAnimationListener {
     override fun onDestroy() {
         super.onDestroy()
         supportFragmentManager.unregisterFragmentLifecycleCallbacks(FragmentLifecycleManager.get())
-        mDestinationChangedListener?.let { navController.removeOnDestinationChangedListener(it) }
+        navController.removeOnDestinationChangedListener(mDestinationChangedListener)
     }
 
 
@@ -114,6 +144,5 @@ class MainActivity : BaseActivity(), SplashScreen.OnExitAnimationListener {
         slideUp.start()
     }
 
-    companion object{
-    }
+    companion object
 }

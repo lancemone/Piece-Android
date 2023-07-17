@@ -2,6 +2,6 @@
 <resources>
 
     <style name="Piece.App.NavigationView" parent="Widget.Material3.NavigationView">
-        <item name="android:background">@color/md_theme_secondaryContainer</item>
+        <item name="android:background">@color/color_green_lighter</item>
     </style>
 </resources>

@@ -46,6 +46,7 @@ androidx-navigationSafeArgsGenerator = {module = 'androidx.navigation:navigation
 androidx-navigationSafeArgsPlugin = {module = 'androidx.navigation:navigation-safe-args-gradle-plugin', version.ref = 'navigation'}
 androidx-window = 'androidx.window:window:1.1.0'
 androidx-multidex = 'androidx.multidex:multidex:2.0.1'
+androidx-biometricKtx = 'androidx.biometric:biometric-ktx:1.2.0-alpha05'
 
 coil = {module = 'io.coil-kt:coil', version.ref = 'coil'}     # Kotlin 协程图片加载库
 okhttp3 = {module = 'com.squareup.okhttp3:okhttp', version.ref = "okhttp3"}

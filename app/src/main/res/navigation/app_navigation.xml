@@ -6,9 +6,10 @@
     app:startDestination="@id/fragmentAppHomeUI">
 
     <fragment android:id="@id/fragmentAppHomeUI"
-        android:name="com.timothy.piece.fragment.HomeUiFragment"
-        android:label="@string/ui"
-        tools:layout="@layout/fragment_home_system">
+        android:name="com.timothy.feature.ui.fragment.HomeUiFragment"
+        android:label="@string/app_name"
+        app:route="@string/route_fragment_home_ui"
+        tools:layout="@layout/fragment_home_ui">
     </fragment>
 
     <fragment android:id="@id/fragmentAppHomeSystem"
@@ -29,32 +30,13 @@
     <fragment android:id="@id/fragmentSettings"
         android:name="com.timothy.piece.fragment.AppSettingsFragment"
         android:label="@string/settings"/>
-<!--    <action-->
-<!--        android:id="@id/action_global_main"-->
-<!--        app:destination="@id/fragmentAppMain"-->
-<!--        app:launchSingleTop="true" />-->
 
-<!--    <fragment-->
-<!--        android:id="@id/fragmentAppMain"-->
-<!--        android:name="com.timothy.piece.fragment.MainFragment"-->
-<!--        tools:layout="@layout/fragment_main"-->
-<!--        android:label="MainFragment">-->
+    <fragment android:id="@id/fragmentAuthentication"
+        android:name="com.timothy.authentication.fragment.AuthenticationFragment"
+        app:route="@string/route_fragment_authentication"/>
 
-<!--        <deepLink app:uri="@string/link_main_fragment"/>-->
-
-<!--        <action app:destination="@id/fragmentAppNewComerGuide"-->
-<!--            android:id="@id/actionHomeToNewComer" />-->
-
-<!--        <action android:id="@id/action_global_fragmentLinearLayout"-->
-<!--            app:destination="@id/fragmentLinearLayout"/>-->
-<!--    </fragment>-->
-
-<!--    <fragment-->
-<!--        android:id="@id/fragmentAppNewComerGuide"-->
-<!--        android:name="com.timothy.piece.ui.NewComerGuideFragment"-->
-<!--        tools:layout="@layout/fragment_new_comer"-->
-<!--        android:label="NewComerGuideFragment">-->
-
-<!--        <deepLink app:uri="@string/link_new_comer"/>-->
-<!--    </fragment>-->
+    <action android:id="@id/action_main_to_authentication"
+        app:destination="@id/fragmentAuthentication"
+        app:popUpTo="@id/fragmentAppHomeUI"
+        app:launchSingleTop="true"/>
 </navigation>

@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.timothy.feature.ui"
+    namespace = "com.timothy.controller.infrared"
     compileSdk = androidLibs.versions.compileSdk.get().toInt()
 
     defaultConfig {
@@ -22,10 +22,6 @@ android {
                 "proguard-rules.pro"
             )
         }
-
-        dataBinding {
-            enable = true
-        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -38,8 +34,5 @@ android {
 
 dependencies {
 
-    implementation(project(path = ":common"))
-    testImplementation(projectLibs.test.junit)
-    androidTestImplementation(projectLibs.test.extJunit)
-    androidTestImplementation(projectLibs.test.espressoCore)
+    implementation(project(":common"))
 }

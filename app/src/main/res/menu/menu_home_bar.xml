@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<!--    app:actionViewClass="com.google.android.material.search.SearchView"-->
+
+    <item android:id="@+id/global_search_item"
+        android:enabled="true"
+        android:icon="@drawable/keep_ic_global_search"
+        app:showAsAction="always"
+        android:contentDescription="@string/global_search"
+        android:title="@string/global_search"/>
+</menu>

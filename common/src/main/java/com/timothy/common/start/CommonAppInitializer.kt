@@ -1,7 +1,7 @@
 package com.timothy.common.start
 
 import android.content.Context
-import androidx.startup.Initializer
+//import androidx.startup.Initializer
 
 
 /**
@@ -12,12 +12,12 @@ import androidx.startup.Initializer
  * <p>
  * <p/>
  */
-class CommonAppInitializer : Initializer<Unit>{
-    override fun create(context: Context) {
-
-    }
-
-    override fun dependencies(): MutableList<Class<out Initializer<*>>> {
-        return mutableListOf()
-    }
-}
+//class CommonAppInitializer : Initializer<Unit>{
+//    override fun create(context: Context) {
+//
+//    }
+//
+//    override fun dependencies(): MutableList<Class<out Initializer<*>>> {
+//        return mutableListOf()
+//    }
+//}

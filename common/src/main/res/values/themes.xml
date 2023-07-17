@@ -48,8 +48,8 @@
         <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Material3.LargeComponent</item>
 
         <item name="navigationViewStyle">@style/Piece.App.NavigationView</item>
-<!--        <item name="android:statusBarColor">@android:color/transparent</item>-->
-<!--        <item name="statusBarBackground">@android:color/transparent</item>-->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="statusBarBackground">@android:color/transparent</item>
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">true</item>
     </style>

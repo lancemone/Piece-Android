@@ -51,4 +51,7 @@
 
     <color name="color_window_background">#FFFFFFFF</color>
     <color name="color_default_text">#FF000000</color>
+
+    <color name="color_green_light">#BBE5B3</color>
+    <color name="color_green_lighter">#E3F1DF</color>
 </resources>

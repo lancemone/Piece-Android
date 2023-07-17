@@ -1,12 +1,10 @@
 plugins {
     alias(projectLibs.plugins.androidLibrary)
     alias(projectLibs.plugins.kotlinAndroid)
-    alias(projectLibs.plugins.ksp)
-    alias(projectLibs.plugins.kotlinParcelize)
 }
 
 android {
-    namespace = "com.timothy.common"
+    namespace = "com.timothy.authentication"
     compileSdk = androidLibs.versions.compileSdk.get().toInt()
 
     defaultConfig {
@@ -14,20 +12,15 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
-        resourceConfigurations += setOf()
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = true
+            isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-        }
-
-        debug {
-            isMinifyEnabled = false
         }
 
         viewBinding {
@@ -45,19 +38,6 @@ android {
 
 dependencies {
 
-    api(project(":base-framework-ktx"))
-    api(project(":library:network"))
-    api(projectLibs.coil)
-    api(projectLibs.gson)
-//    ksp(projectLibs.theRouter.apt)
-//    api(projectLibs.theRouter.router)
-//    api(projectLibs.androidx.startup)
-    implementation(projectLibs.retrofit2)
-    implementation(projectLibs.okhttp3Logging)
-
-    compileOnly(projectLibs.androidx.navigationSafeArgsGenerator)
-    api(projectLibs.androidx.navigationUI)
-    api(projectLibs.androidx.navigationFragment)
-    api(projectLibs.androidx.navigationDynamicFragment)
-    api(projectLibs.androidx.navigationDynamicRuntime)
+    implementation(project(path = ":common"))
+    implementation(projectLibs.androidx.biometricKtx)
 }

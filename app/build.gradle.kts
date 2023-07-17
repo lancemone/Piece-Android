@@ -56,9 +56,9 @@ android {
             isShrinkResources = false
         }
 
-//        dataBinding {
-//            enable = true
-//        }
+        dataBinding {   // 主app也需要把dataBinding开关打开,否则会报错[java.lang.NoClassDefFoundError: Failed resolution of: Landroidx/databinding/DataBinderMapperImpl;]
+            enable = true
+        }
 
         viewBinding {
             enable = true
@@ -79,6 +79,7 @@ dependencies {
     implementation(project(path = ":common"))
     implementation(project(path = ":feature:ui"))
     implementation(project(path = ":library:nativelib"))
+    implementation(project(path = ":library:authentication"))
 
 //    ksp(projectLibs.theRouter.apt)
 //    implementation(projectLibs.theRouter.router)

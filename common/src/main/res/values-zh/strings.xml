@@ -13,4 +13,5 @@
     <string name="layout">布局</string>
     <string name="slogan">做更好的自己</string>
     <string name="settings">设置</string>
+    <string name="global_search">全局搜索</string>
 </resources>
