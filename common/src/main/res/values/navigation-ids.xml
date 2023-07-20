@@ -2,6 +2,8 @@
 <resources>
 
     <item name="navigation_app" type="id"/>
+    <item name="navigation_linear_layout" type="id"/>
+
     <item name="navigation_home_ui" type="id"/>
     <item name="navigation_home_system" type="id"/>
 

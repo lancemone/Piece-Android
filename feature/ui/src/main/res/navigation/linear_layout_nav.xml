@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/navigation_linear_layout"
+    app:startDestination="@id/fragmentLinearLayout">
+
+    <fragment android:id="@id/fragmentLinearLayout"
+        android:name="com.timothy.feature.ui.fragment.LinearLayoutFragment"
+        android:label=""
+        app:route="@string/route_fragment_linear_layout"/>
+</navigation>

@@ -5,11 +5,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.findNavController
 import com.timothy.authentication.databinding.FragmentAuthenticationBinding
 import com.timothy.authentication.helper.BiometricHelper
 import com.timothy.common.base.BaseFragment
-import com.timothy.common.databinding.LayoutCommonEmptyBinding
 
 
 /**
@@ -64,6 +64,14 @@ class AuthenticationFragment: BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        activity?.onBackPressedDispatcher?.addCallback(
+            viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    activity?.finish()
+                }
+            }
+        )
     }
 
     private fun showFail(errString:String){

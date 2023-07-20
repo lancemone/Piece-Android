@@ -51,7 +51,35 @@
 
     <color name="color_window_background">#FFFFFFFF</color>
     <color name="color_default_text">#FF000000</color>
+    <color name="color_default_sub_text">#454F5B</color>
+
 
     <color name="color_green_light">#BBE5B3</color>
     <color name="color_green_lighter">#E3F1DF</color>
+    <color name="color_green">#50B83C</color>
+    <color name="color_green_dark">#108043</color>
+    <color name="color_green_darker">#173630</color>
+    
+    <color name="color_teal_lighter">#E0F5F5</color>
+    <color name="color_teal_light">#B7ECEC</color>
+    <color name="color_teal">#47C1BF</color>
+    <color name="color_teal_dark">#00848E</color>
+    <color name="color_teal_darker">#003135</color>
+
+    <color name="color_purple_lighter">#F6F0FD</color>
+    <color name="color_purple_light">#E3D0FF</color>
+    <color name="color_purple">#9C6ADE</color>
+    <color name="color_purple_dark">#50248F</color>
+    <color name="color_purple_darker">#230051</color>
+
+    <!--    ink:墨-->
+    <color name="color_ink_lightest">#919EAB</color>
+    <color name="color_ink_lighter">#637381</color>
+    <color name="color_ink_light">#454F5B</color>
+    <color name="color_ink">#212B36</color>
+
+    <color name="color_sky_lighter">#F9FAFB</color>
+    <color name="color_sky_light">#F4F6F8</color>
+    <color name="color_sky">#DFE3E8</color>
+    <color name="color_sky_dark">#C4CDD5</color>
 </resources>

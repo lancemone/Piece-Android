@@ -14,15 +14,13 @@ import androidx.core.splashscreen.SplashScreenViewProvider
 import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
-import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
-import com.timothy.authentication.helper.BiometricHelper
 import com.timothy.common.base.BaseActivity
 import com.timothy.common.lifecyc.FragmentLifecycleManager
-import com.timothy.feature.ui.databinding.HomeNavViewHeaderBinding
 import com.timothy.piece.databinding.ActivityMainBinding
+import com.timothy.piece.databinding.LayoutHomeNavigationHeaderBinding
 import com.timothy.piece.vm.MainViewModel
 
 //@Route(path = RouterPath.path_app_main)
@@ -34,8 +32,8 @@ class MainActivity : BaseActivity(), SplashScreen.OnExitAnimationListener {
         ActivityMainBinding.inflate(layoutInflater)
     }
 
-    private val navHeaderBinding: HomeNavViewHeaderBinding by lazy {
-        HomeNavViewHeaderBinding.inflate(layoutInflater)
+    private val navHeaderBinding: LayoutHomeNavigationHeaderBinding by lazy {
+        LayoutHomeNavigationHeaderBinding.inflate(layoutInflater)
     }
 
     private lateinit var navController: NavController
@@ -60,12 +58,6 @@ class MainActivity : BaseActivity(), SplashScreen.OnExitAnimationListener {
         }
 
     private val appBarConfiguration: AppBarConfiguration by lazy {
-//        AppBarConfiguration(
-//            topLevelDestinationIds = setOf(R.id.fragmentAppHomeUI),
-//            drawerLayout = binding.homeDrawer
-//        ){
-//            true
-//        }
         AppBarConfiguration(navController.graph, binding.hostDrawer)
     }
 
@@ -78,8 +70,6 @@ class MainActivity : BaseActivity(), SplashScreen.OnExitAnimationListener {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
         navController.addOnDestinationChangedListener(mDestinationChangedListener)
-//        val appBarConfiguration = AppBarConfiguration.Builder(navController.graph).build()
-//        setupActionBarWithNavController(navController, appBarConfiguration)
         navHostFragment.childFragmentManager.registerFragmentLifecycleCallbacks(
             FragmentLifecycleManager.get(),
             false
@@ -103,14 +93,6 @@ class MainActivity : BaseActivity(), SplashScreen.OnExitAnimationListener {
         )
 
         navController.navigate(R.id.action_main_to_authentication)
-//        navController.navigate(
-//            resId = R.id.fragmentAuthentication,
-//            args = null,
-//            navOptions = NavOptions.Builder()
-//                .setPopUpTo(route = getString(R.string.route_fragment_home_ui), inclusive = true, saveState = true)
-//                .setLaunchSingleTop(true)
-//                .build()
-//        )
     }
 
     override fun onNewIntent(intent: Intent?) {

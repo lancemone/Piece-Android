@@ -48,4 +48,6 @@
     <color name="md_theme_onSurfaceVariant">#BFC8CA</color>
 
     <color name="color_window_background">#FF000000</color>
+    <color name="color_default_text">#FFFFFFFF</color>
+    <color name="color_default_sub_text">#F4F6F8</color>
 </resources>

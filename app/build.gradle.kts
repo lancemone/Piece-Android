@@ -57,7 +57,7 @@ android {
         }
 
         dataBinding {   // 主app也需要把dataBinding开关打开,否则会报错[java.lang.NoClassDefFoundError: Failed resolution of: Landroidx/databinding/DataBinderMapperImpl;]
-            enable = true
+            enable = false
         }
 
         viewBinding {

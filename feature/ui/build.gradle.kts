@@ -23,7 +23,7 @@ android {
             )
         }
 
-        dataBinding {
+        viewBinding {
             enable = true
         }
     }

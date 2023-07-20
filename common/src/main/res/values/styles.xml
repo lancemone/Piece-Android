@@ -4,4 +4,36 @@
     <style name="Piece.App.NavigationView" parent="Widget.Material3.NavigationView">
         <item name="android:background">@color/color_green_lighter</item>
     </style>
+
+    <style name="Piece.App.Title.Large">
+        <item name="android:textColor">@color/color_default_text</item>
+        <item name="android:textColorHint">?android:textColorHint</item>
+        <item name="android:textColorHighlight">?android:textColorHighlight</item>
+        <item name="android:textColorLink">?android:textColorLink</item>
+        <item name="android:textSize">@dimen/dp_28</item>
+    </style>
+
+    <style name="Piece.App.Title" parent="android:TextAppearance">
+        <item name="android:textColor">@color/color_default_text</item>
+        <item name="android:textColorHint">?android:textColorHint</item>
+        <item name="android:textColorHighlight">?android:textColorHighlight</item>
+        <item name="android:textColorLink">?android:textColorLink</item>
+        <item name="android:textSize">@dimen/dp_22</item>
+    </style>
+
+    <style name="Piece.App.Title.Small" parent="android:TextAppearance">
+        <item name="android:textColor">@color/color_default_text</item>
+        <item name="android:textColorHint">?android:textColorHint</item>
+        <item name="android:textColorHighlight">?android:textColorHighlight</item>
+        <item name="android:textColorLink">?android:textColorLink</item>
+        <item name="android:textSize">@dimen/dp_18</item>
+    </style>
+
+    <style name="Piece.App.SubTitle" parent="android:TextAppearance">
+        <item name="android:textColor">@color/color_default_sub_text</item>
+        <item name="android:textColorHint">?android:textColorHint</item>
+        <item name="android:textColorHighlight">?android:textColorHighlight</item>
+        <item name="android:textColorLink">?android:textColorLink</item>
+        <item name="android:textSize">@dimen/dp_16</item>
+    </style>
 </resources>
