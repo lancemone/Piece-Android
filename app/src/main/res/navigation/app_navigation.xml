@@ -16,6 +16,9 @@
         <action android:id="@id/actionToLinearLayoutFragment"
             app:destination="@id/navigation_linear_layout"
             app:popUpToSaveState="true"/>
+
+        <action android:id="@+id/actionUIToTextViewFragment"
+            app:destination="@id/fragmentTextView"/>
     </fragment>
 
     <fragment android:id="@id/fragmentAppHomeSystem"
@@ -45,4 +48,8 @@
         app:destination="@id/fragmentAuthentication"
         app:popUpTo="@id/fragmentAppHomeUI"
         app:launchSingleTop="true"/>
+
+    <fragment android:id="@id/fragmentTextView"
+        android:name="com.timothy.feature.ui.fragment.TextViewFragment"
+        android:label="text view"/>
 </navigation>

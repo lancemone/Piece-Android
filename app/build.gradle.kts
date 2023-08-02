@@ -55,15 +55,35 @@ android {
             isMinifyEnabled = true
             isShrinkResources = false
         }
+    }
 
-        dataBinding {   // 主app也需要把dataBinding开关打开,否则会报错[java.lang.NoClassDefFoundError: Failed resolution of: Landroidx/databinding/DataBinderMapperImpl;]
-            enable = false
+    //        dataBinding {   // 主app也需要把dataBinding开关打开,否则会报错[java.lang.NoClassDefFoundError: Failed resolution of: Landroidx/databinding/DataBinderMapperImpl;]
+//            enable = false
+//        }
+
+    viewBinding {
+        enable = true
+    }
+
+    // 构建变体的维度
+    flavorDimensions += "version"
+
+    // 构建变体的维度组合
+//    flavorDimensions += listOf("api", "mode")
+
+    // 构建的变体  https://developer.android.com/studio/build/build-variants?hl=zh-cn
+    productFlavors {
+        create("ZH"){
+            dimension = "version"
+            applicationIdSuffix = ".zh"
+            versionNameSuffix = "-zh"
         }
 
-        viewBinding {
-            enable = true
+        create("EN"){
+            dimension = "version"
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17

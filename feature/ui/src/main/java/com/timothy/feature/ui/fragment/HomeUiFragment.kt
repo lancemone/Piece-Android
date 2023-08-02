@@ -39,8 +39,12 @@ class HomeUiFragment : BaseFragment() {
 
     private fun bindListener() {
         with(binding) {
-            binding.tvLinear.setOnClickListener {
+            tvLinear.setOnClickListener {
                 findNavController().navigate(R.id.actionToLinearLayoutFragment)
+            }
+
+            actionTextView.setOnClickListener {
+                findNavController().navigate(R.id.fragmentTextView)
             }
         }
     }

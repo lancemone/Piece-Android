@@ -38,4 +38,5 @@
     <string name="gravity_start_specification">将对象推到其容器的开头，而不改变其大小。</string>
     <string name="gravity_end_specification">将对象推到其容器的末端，而不改变其大小。</string>
     <string name="linear_layout">线性布局</string>
+    <string name="text_view">文本控件</string>
 </resources>

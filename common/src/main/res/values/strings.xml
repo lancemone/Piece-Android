@@ -38,4 +38,5 @@
     <string name="gravity_start_specification">Push object to the beginning of its container, not changing its size.</string>
     <string name="gravity_end_specification">Push object to the end of its container, not changing its size.</string>
     <string name="linear_layout">LinearLayout</string>
+    <string name="text_view">TextView</string>
 </resources>
