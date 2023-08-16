@@ -1,3 +1,10 @@
+import java.util.Properties
+import java.io.FileInputStream
+
+val keystorePropertiesFile: File = rootProject.file("keystore.properties")
+val keystoreProperties = Properties()
+keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+
 plugins {
     alias(projectLibs.plugins.androidApplication)
     alias(projectLibs.plugins.kotlinAndroid)
@@ -10,17 +17,17 @@ plugins {
 android {
     signingConfigs {
         getByName("debug") {
-            storeFile = file("piece_release.keystore")
-            storePassword = "URHwhw@tea0vzt5pvp"
-            keyPassword = "URHwhw@tea0vzt5pvp"
-            keyAlias = "key_sounding"
+            storeFile = file(keystoreProperties["storeFile"] as String)
+            storePassword = keystoreProperties["storePassword"] as String
+            keyPassword = keystoreProperties["keyPassword"] as String
+            keyAlias = keystoreProperties["keyAlias"] as String
         }
 
         create("release") {
-            storePassword = "URHwhw@tea0vzt5pvp"
-            keyPassword = "URHwhw@tea0vzt5pvp"
-            storeFile = file("/Users/tao/code/Android/Piece-Android/app/piece_release.keystore")
-            keyAlias = "key_sounding"
+            storeFile = file(keystoreProperties["storeFile"] as String)
+            storePassword = keystoreProperties["storePassword"] as String
+            keyPassword = keystoreProperties["keyPassword"] as String
+            keyAlias = keystoreProperties["keyAlias"] as String
         }
     }
     namespace = "com.timothy.piece"
@@ -73,14 +80,15 @@ android {
 
     // 构建的变体  https://developer.android.com/studio/build/build-variants?hl=zh-cn
     productFlavors {
+
+        create("EN"){
+            dimension = "version"
+        }
+
         create("ZH"){
             dimension = "version"
             applicationIdSuffix = ".zh"
             versionNameSuffix = "-zh"
-        }
-
-        create("EN"){
-            dimension = "version"
         }
     }
 

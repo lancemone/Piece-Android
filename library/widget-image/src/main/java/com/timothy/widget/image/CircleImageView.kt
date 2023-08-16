@@ -1,4 +1,4 @@
-package com.timothy.framework.ktx.views
+package com.timothy.widget.image
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -8,24 +8,27 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Matrix
 import android.graphics.Paint
+import android.graphics.Path
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffXfermode
 import android.graphics.RectF
 import android.graphics.Shader
 import android.graphics.SweepGradient
+import android.graphics.Xfermode
 import android.util.AttributeSet
 import androidx.annotation.ColorInt
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.graphics.drawable.toBitmap
-import com.timothy.framework.R
 import kotlin.math.min
 
 
 /**
  * @Project: Piece
- * @ClassPath:  com.timothy.framework.ktx.views.CircleImageView
+ * @ClassPath:  com.timothy.widget.image.CircleImageView
  * @Author: MoTao
  * @Date: 2023-07-13
  * <p>
- *     圆形图
+ *     圆形图片控件
  * <p/>
  */
 class CircleImageView: AppCompatImageView {
@@ -44,8 +47,12 @@ class CircleImageView: AppCompatImageView {
 
     @ColorInt
     private var mBorderStartColour: Int = DEFAULT_BORDER_COLOR
+
     @ColorInt
     private var mBorderEndColour:Int = DEFAULT_BORDER_COLOR
+
+    private var mWidth = 0F
+    private var mHeight = 0F
 
     constructor(context: Context) : this(context, null)
 
@@ -66,6 +73,8 @@ class CircleImageView: AppCompatImageView {
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
+        mWidth = w.toFloat()
+        mHeight = h.toFloat()
         mRadius = min(w, h) / 2
     }
 
@@ -77,46 +86,72 @@ class CircleImageView: AppCompatImageView {
     }
 
     private val mPaint = Paint(Paint.ANTI_ALIAS_FLAG)
+//    @SuppressLint("DrawAllocation")
+//    override fun onDraw(canvas: Canvas?) {
+////        super.onDraw(canvas)
+//        if (canvas == null){
+//            return
+//        }
+//        runCatching {
+//            val bitmap: Bitmap = drawable.toBitmap()
+//            val srcRadius: Float = (mRadius - mBorderWidth).toFloat()
+//            val viewWidth = measuredWidth
+//            val viewHeight = measuredHeight
+//            val bitmapRectF = RectF(
+//                /* left = */ mBorderWidth.toFloat(),
+//                /* top = */ mBorderWidth.toFloat(),
+//                /* right = */ (viewWidth - mBorderWidth).toFloat(),
+//                /* bottom = */ (viewHeight - mBorderWidth).toFloat()
+//            )
+//            //构建BitmapShader对象，设置为CLAMP模式，当所画图形的尺寸小于bitmap尺寸的时候，会对bitmap进行裁剪
+//            val bitmapShader = BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP)
+//            // 对bitmap进行缩放
+//            // 对bitmap进行缩放
+//            val mScale = srcRadius * 2.0f / bitmap.width.coerceAtMost(bitmap.height)
+//            val matrix = Matrix()
+//            matrix.setScale(mScale, mScale)
+//            bitmapShader.setLocalMatrix(matrix)
+//            mPaint.setShader(bitmapShader)
+//            mPaint.isAntiAlias = true
+//            // 画圆形，并对paint设置的BitmapShader中的bitmap进行裁剪处理
+//            canvas.drawCircle(
+//                /* cx = */ bitmapRectF.centerX(),
+//                /* cy = */ bitmapRectF.centerY(),
+//                /* radius = */ srcRadius,
+//                /* paint = */ mPaint)
+//            if (mBorderWidth > 0){
+//                drawBorder(canvas)
+//            }
+//        }
+//    }
+
     @SuppressLint("DrawAllocation")
     override fun onDraw(canvas: Canvas?) {
-//        super.onDraw(canvas)
+        val srcRectF = RectF(mWidth, mHeight, 0f, 0f)
+        canvas?.saveLayer(srcRectF, null)
+        scaleType = ScaleType.CENTER_CROP
+        super.onDraw(canvas)
+        val path = Path()
+        val srcPath = Path()
+        mPaint.reset()
+        mPaint.isAntiAlias = true
+        mPaint.setXfermode(PorterDuffXfermode(PorterDuff.Mode.DST_OUT))
+        path.addCircle(mWidth/2, mHeight/2, mRadius.toFloat(), Path.Direction.CW)
+        srcPath.addRect(srcRectF, Path.Direction.CW)
+        srcPath.op(path, Path.Op.DIFFERENCE)
+        canvas?.drawPath(srcPath, mPaint)
+        mPaint.xfermode = null
+        if (mBorderWidth > 0){
+            drawBorder(canvas = canvas)
+        }
+        canvas?.restore()
+    }
+
+    private fun drawBorder(canvas: Canvas?){
         if (canvas == null){
             return
         }
-        runCatching {
-            val bitmap: Bitmap = drawable.toBitmap()
-            val srcRadius: Float = (mRadius - mBorderWidth).toFloat()
-            val viewWidth = measuredWidth
-            val viewHeight = measuredHeight
-            val bitmapRectF = RectF(
-                /* left = */ mBorderWidth.toFloat(),
-                /* top = */ mBorderWidth.toFloat(),
-                /* right = */ (viewWidth - mBorderWidth).toFloat(),
-                /* bottom = */ (viewHeight - mBorderWidth).toFloat()
-            )
-            //构建BitmapShader对象，设置为CLAMP模式，当所画图形的尺寸小于bitmap尺寸的时候，会对bitmap进行裁剪
-            val bitmapShader = BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP)
-            // 对bitmap进行缩放
-            // 对bitmap进行缩放
-            val mScale = srcRadius * 2.0f / Math.min(bitmap.width, bitmap.height)
-            val matrix = Matrix()
-            matrix.setScale(mScale, mScale)
-            bitmapShader.setLocalMatrix(matrix)
-            mPaint.setShader(bitmapShader)
-            mPaint.isAntiAlias = true
-            // 画圆形，并对paint设置的BitmapShader中的bitmap进行裁剪处理
-            canvas.drawCircle(
-                /* cx = */ bitmapRectF.centerX(),
-                /* cy = */ bitmapRectF.centerY(),
-                /* radius = */ srcRadius,
-                /* paint = */ mPaint)
-            if (mBorderWidth > 0){
-                drawBorder(canvas)
-            }
-        }
-    }
 
-    private fun drawBorder(canvas: Canvas){
         mPaint.reset()
         val mCircleRect = RectF(0f, 0f, measuredWidth.toFloat(), measuredHeight.toFloat())
         mPaint.color = mBorderColour
@@ -133,6 +168,7 @@ class CircleImageView: AppCompatImageView {
             )
             mPaint.setShader(sweepGradient)
         }
+        // 画圆弧
         canvas.drawArc(
             /* oval = */ mCircleRect,
             /* startAngle = */ 0F,

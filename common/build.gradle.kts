@@ -14,7 +14,6 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
-        resourceConfigurations += setOf()
     }
 
     buildTypes {
@@ -28,6 +27,19 @@ android {
 
         debug {
             isMinifyEnabled = false
+        }
+    }
+
+    flavorDimensions += "version"
+
+    productFlavors {
+
+        create("EN"){
+            dimension = "version"
+        }
+
+        create("ZH"){
+            dimension = "version"
         }
     }
 

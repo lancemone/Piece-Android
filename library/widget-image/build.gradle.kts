@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.timothy.compose"
+    namespace = "com.timothy.widget.image"
     compileSdk = androidLibs.versions.compileSdk.get().toInt()
 
     defaultConfig {
@@ -23,39 +23,18 @@ android {
             )
         }
     }
-
-    flavorDimensions += "version"
-
-    productFlavors {
-
-        create("EN"){
-            dimension = "version"
-        }
-
-        create("ZH"){
-            dimension = "version"
-        }
-    }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-
     kotlinOptions {
         jvmTarget = androidLibs.versions.targetJava.get()
-    }
-
-    buildFeatures {
-        compose = true
-    }
-
-    composeOptions {
-        // https://developer.android.com/jetpack/androidx/releases/compose-kotlin?hl=zh-cn
-        kotlinCompilerExtensionVersion = "1.4.3"
     }
 }
 
 dependencies {
-    implementation(project(path = ":common"))
+
+    implementation(projectLibs.ktx.core)
+    implementation(projectLibs.appcompat)
+    implementation(projectLibs.material)
 }

@@ -7,7 +7,7 @@
     android:paddingBottom="11dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.timothy.framework.ktx.views.CircleImageView
+    <com.timothy.widget.image.CircleImageView
         android:layout_width="72dp"
         android:layout_height="72dp"
         android:id="@+id/header_logo"

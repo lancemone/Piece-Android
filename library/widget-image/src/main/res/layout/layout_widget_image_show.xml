@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.timothy.widget.image.RoundRectImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/round_rect_image"
+        app:image_shape="fillet"
+        app:border_color="@color/design_default_color_error"
+        app:border_width="1dp"
+        app:corner_radius="6dp"
+        app:inner_border_width="2dp"
+        app:inner_border_color="#fef263"
+        app:srcCompat="@mipmap/ic_image_show_default"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.timothy.widget.image.CircleImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="15dp"
+        app:border_width="2dp"
+        app:border_start_color="#eff263"
+        app:border_end_color="#fef343"
+        app:border_color="#fef263"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/round_rect_image"
+        app:srcCompat="@mipmap/ic_image_show_default"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

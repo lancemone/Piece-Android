@@ -23,6 +23,20 @@ android {
             )
         }
     }
+
+    flavorDimensions += "version"
+
+    productFlavors {
+
+        create("EN"){
+            dimension = "version"
+        }
+
+        create("ZH"){
+            dimension = "version"
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17

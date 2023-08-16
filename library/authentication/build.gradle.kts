@@ -24,6 +24,19 @@ android {
         }
     }
 
+    flavorDimensions += "version"
+
+    productFlavors {
+
+        create("EN"){
+            dimension = "version"
+        }
+
+        create("ZH"){
+            dimension = "version"
+        }
+    }
+
     viewBinding {
         enable = true
     }
