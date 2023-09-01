@@ -3,6 +3,7 @@
 
     <item name="navigation_app" type="id"/>
     <item name="navigation_linear_layout" type="id"/>
+    <item name="navigation_settings" type="id"/>
 
     <item name="navigation_home_ui" type="id"/>
     <item name="navigation_home_system" type="id"/>
@@ -24,6 +25,6 @@
     <item name="actionToAppHome" type="id"/>
     <item name="actionHomeToNewComer" type="id"/>
     <item name="actionToLinearLayoutFragment" type="id"/>
-    <item name="action_global_fragmentLinearLayout" type="id"/>
+    <item name="action_global_to_main_popup" type="id"/>
     <item name="action_main_to_authentication" type="id"/>
 </resources>

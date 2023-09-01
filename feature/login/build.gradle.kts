@@ -1,6 +1,6 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    alias(projectLibs.plugins.androidLibrary)
+    alias(projectLibs.plugins.kotlinAndroid)
 }
 
 android {
@@ -42,7 +42,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = androidLibs.versions.targetJava.get()
     }
 }
 

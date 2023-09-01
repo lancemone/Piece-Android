@@ -32,4 +32,11 @@
         <attr name="corner_bottom_left_radius" format="dimension" />
         <attr name="corner_bottom_right_radius" format="dimension" />
     </declare-styleable>
+
+    <declare-styleable name="SplitterImageView">
+        <attr name="division_width"/>
+        <attr name="division_color"/>
+        <attr name="row_count" format="integer"/>
+        <attr name="column_count" format="fraction"/>
+    </declare-styleable>
 </resources>

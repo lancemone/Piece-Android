@@ -39,4 +39,6 @@
     <string name="gravity_end_specification">Push object to the end of its container, not changing its size.</string>
     <string name="linear_layout">LinearLayout</string>
     <string name="text_view">TextView</string>
+    <string name="screen_shot_allow">Allow Screenshot</string>
+    <string name="fingerprint_unlock">Fingerprint Unlock</string>
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation" translatable="false">
-    <string name="route_fragment_home_ui">/app/home/ui_fragment</string>
-    <string name="route_fragment_linear_layout" >/feature/ui/fragment_linear_layout</string>
-    <string name="route_fragment_authentication">/library/authentication/authentication_fragment</string>
+    <string name="route_fragment_home_ui" translatable="false">/app/home/ui_fragment</string>
+    <string name="route_fragment_linear_layout" translatable="false">/feature/ui/fragment_linear_layout</string>
+    <string name="route_fragment_authentication" translatable="false">/library/authentication/authentication_fragment</string>
 </resources>

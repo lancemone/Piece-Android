@@ -126,9 +126,9 @@ class CircleImageView: AppCompatImageView {
 //    }
 
     @SuppressLint("DrawAllocation")
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         val srcRectF = RectF(mWidth, mHeight, 0f, 0f)
-        canvas?.saveLayer(srcRectF, null)
+        canvas.saveLayer(srcRectF, null)
         scaleType = ScaleType.CENTER_CROP
         super.onDraw(canvas)
         val path = Path()
@@ -139,12 +139,12 @@ class CircleImageView: AppCompatImageView {
         path.addCircle(mWidth/2, mHeight/2, mRadius.toFloat(), Path.Direction.CW)
         srcPath.addRect(srcRectF, Path.Direction.CW)
         srcPath.op(path, Path.Op.DIFFERENCE)
-        canvas?.drawPath(srcPath, mPaint)
+        canvas.drawPath(srcPath, mPaint)
         mPaint.xfermode = null
         if (mBorderWidth > 0){
             drawBorder(canvas = canvas)
         }
-        canvas?.restore()
+        canvas.restore()
     }
 
     private fun drawBorder(canvas: Canvas?){

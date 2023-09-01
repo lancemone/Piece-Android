@@ -54,7 +54,4 @@ android {
 dependencies {
 
     implementation(project(path = ":common"))
-    testImplementation(projectLibs.test.junit)
-    androidTestImplementation(projectLibs.test.extJunit)
-    androidTestImplementation(projectLibs.test.espressoCore)
 }

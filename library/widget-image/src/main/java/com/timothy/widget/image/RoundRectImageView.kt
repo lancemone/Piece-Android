@@ -173,14 +173,14 @@ class RoundRectImageView : AppCompatImageView{
     }
 
     @SuppressLint("DrawAllocation")
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         // 使用图形混合模式来显示指定区域的图片
-        canvas?.saveLayer(srcRectF, null)
+        canvas.saveLayer(srcRectF, null)
         if (!isCoverImage) {
             val sx = 1.0f * (width - 2 * borderWidth - 2 * innerBorderWidth) / width
             val sy = 1.0f * (height - 2 * borderWidth - 2 * innerBorderWidth) / height
             // 缩小画布，使图片内容不被borders覆盖
-            canvas?.scale(sx, sy, width / 2.0f, height / 2.0f)
+            canvas.scale(sx, sy, width / 2.0f, height / 2.0f)
         }
         super.onDraw(canvas)
         paint.reset()
@@ -206,14 +206,14 @@ class RoundRectImageView : AppCompatImageView{
         srcPath.reset()
         srcPath.addRect(srcRectF, Path.Direction.CCW)
         srcPath.op(path, Path.Op.DIFFERENCE)   // 计算tempPath和path的差集
-        canvas?.drawPath(srcPath, paint)
+        canvas.drawPath(srcPath, paint)
         paint.setXfermode(null)
         if (maskColor != 0){
             paint.color = maskColor
-            canvas?.drawPath(path, paint)
+            canvas.drawPath(path, paint)
         }
         // 恢复画布
-        canvas?.restore()
+        canvas.restore()
         drawBorders(canvas)
     }
 

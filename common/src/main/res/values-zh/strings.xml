@@ -39,4 +39,6 @@
     <string name="gravity_end_specification">将对象推到其容器的末端，而不改变其大小。</string>
     <string name="linear_layout">线性布局</string>
     <string name="text_view">文本控件</string>
+    <string name="screen_shot_allow">允许截屏</string>
+    <string name="fingerprint_unlock">指纹解锁</string>
 </resources>

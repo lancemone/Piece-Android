@@ -108,6 +108,7 @@ dependencies {
     implementation(project(path = ":feature:ui"))
     implementation(project(path = ":library:nativelib"))
     implementation(project(path = ":library:authentication"))
+    implementation(project(path = ":library:widget-image"))
 
 //    ksp(projectLibs.theRouter.apt)
 //    implementation(projectLibs.theRouter.router)

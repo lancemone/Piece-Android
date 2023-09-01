@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.WindowManager
 import android.view.animation.AnticipateInterpolator
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -18,10 +19,13 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.timothy.common.base.BaseActivity
+import com.timothy.common.constants.DataStoreKey
+import com.timothy.common.helper.DataStoreHelper
 import com.timothy.common.lifecyc.FragmentLifecycleManager
 import com.timothy.piece.databinding.ActivityMainBinding
 import com.timothy.piece.databinding.LayoutHomeNavigationHeaderBinding
 import com.timothy.piece.vm.MainViewModel
+import com.timothy.common.R as CR
 
 //@Route(path = RouterPath.path_app_main)
 class MainActivity : BaseActivity(), SplashScreen.OnExitAnimationListener {
@@ -68,6 +72,7 @@ class MainActivity : BaseActivity(), SplashScreen.OnExitAnimationListener {
 //        setSupportActionBar(binding.hostToolBar)
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navHostFragment.navController
         navController = navHostFragment.navController
         navController.addOnDestinationChangedListener(mDestinationChangedListener)
         navHostFragment.childFragmentManager.registerFragmentLifecycleCallbacks(
@@ -91,8 +96,22 @@ class MainActivity : BaseActivity(), SplashScreen.OnExitAnimationListener {
             navController = navController,
             configuration = appBarConfiguration
         )
+    }
 
-        navController.navigate(R.id.action_main_to_authentication)
+    override fun onResume() {
+        super.onResume()
+        val isChecked =
+            DataStoreHelper.defaultData().getBoolean(DataStoreKey.SETTINGS_SCREEN_SHOT_ALLOW, false)
+        if (isChecked) {
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_SECURE,
+                WindowManager.LayoutParams.FLAG_SECURE
+            )
+        }
+
+        if (DataStoreHelper.defaultData().getBoolean(DataStoreKey.SETTING_APP_LOCK_ENABLE, false)){
+            navController.navigate(R.id.fragmentAuthentication)
+        }
     }
 
     override fun onNewIntent(intent: Intent?) {
@@ -126,5 +145,4 @@ class MainActivity : BaseActivity(), SplashScreen.OnExitAnimationListener {
         slideUp.start()
     }
 
-    companion object
 }

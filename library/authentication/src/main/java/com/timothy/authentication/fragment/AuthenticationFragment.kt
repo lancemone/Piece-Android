@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.timothy.authentication.databinding.FragmentAuthenticationBinding
 import com.timothy.authentication.helper.BiometricHelper
 import com.timothy.common.base.BaseFragment
+import com.timothy.common.R as CR
 
 
 /**
@@ -50,6 +51,8 @@ class AuthenticationFragment: BaseFragment() {
                             findNavController().popBackStack()
                         }
                     })
+            }else{
+                checkBiometricAuthenticateFail()
             }
         }
     }
@@ -59,23 +62,31 @@ class AuthenticationFragment: BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        activity?.onBackPressedDispatcher?.addCallback(
+            viewLifecycleOwner, backPressedCallback
+        )
         return binding.root
+    }
+
+    private val backPressedCallback by lazy {
+        object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                activity?.finish()
+            }
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        activity?.onBackPressedDispatcher?.addCallback(
-            viewLifecycleOwner,
-            object : OnBackPressedCallback(true) {
-                override fun handleOnBackPressed() {
-                    activity?.finish()
-                }
-            }
-        )
     }
 
     private fun showFail(errString:String){
         binding.rlFail.visibility = View.VISIBLE
         binding.failTip.text = errString
+    }
+
+    private fun checkBiometricAuthenticateFail(){
+        backPressedCallback.isEnabled = false
+        findNavController().navigate(CR.id.action_global_to_main_popup)
     }
 }

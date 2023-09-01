@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="t16_normal">
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textColor">@color/color_default_text</item>
+    </style>
+</resources>

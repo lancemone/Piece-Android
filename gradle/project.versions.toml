@@ -1,6 +1,6 @@
 [versions]
 gradle = "8.0.2"
-android-application = "8.1.0"
+android-application = "8.1.1"
 kotlin-android = "1.9.0"
 kotlin-jvm = "1.9.0"
 core-ktx = "1.10.1"
@@ -17,7 +17,7 @@ coil = "2.4.0"
 okhttp3 = "4.11.0"
 retrofit2 = "2.9.0"
 kotlin-coroutines = "1.7.3"
-navigation = '2.7.0'
+navigation = '2.7.1'
 
 [libraries]
 buildGradle = { module = "com.android.tools.build:gradle", version.ref = "gradle"}
