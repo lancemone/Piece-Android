@@ -47,6 +47,9 @@ class TextViewFragment : BaseFragment(){
                     append("Surprise Box")
                 }
             }
+
+            tvMarquee.setSingleLine()       // 使用
+            tvMarquee.isSelected = true     // 不设置isSelected为true不会自动开始跑马灯效果
         }
     }
 }

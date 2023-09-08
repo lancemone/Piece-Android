@@ -4,4 +4,10 @@
         <item name="android:textSize">@dimen/sp_16</item>
         <item name="android:textColor">@color/color_default_text</item>
     </style>
+
+    <style name="t22_bold">
+        <item name="android:textSize">@dimen/sp_22</item>
+        <item name="android:textColor">@color/color_default_text</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

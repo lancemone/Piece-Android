@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingHorizontal="@dimen/dp_16"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -9,4 +10,48 @@
         android:layout_height="wrap_content"
         android:id="@+id/first_tv"
         app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title_marquee"
+        android:text="@string/marquee_textview"
+        android:textAppearance="@style/t22_bold"
+        app:drawableBottomCompat="@drawable/line_1dp_theme_color"
+        app:layout_constraintTop_toBottomOf="@id/first_tv"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_marquee"
+        android:text="@string/forrest_gump_lines1"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:scrollHorizontally="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:textAppearance="@style/t16_normal"
+        android:layout_marginVertical="@dimen/dp_11"
+        app:layout_constraintTop_toBottomOf="@id/title_marquee"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title_neon"
+        android:text="@string/marquee_textview"
+        android:textAppearance="@style/t22_bold"
+        app:drawableBottomCompat="@drawable/line_1dp_theme_color"
+        app:layout_constraintTop_toBottomOf="@id/tv_marquee"/>
+
+    <com.timothy.widget.text.NeonTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_neon"
+        android:text="@string/sleepless_in_seattle"
+        android:textAppearance="@style/t16_normal"
+        app:gradient_direction="topToBottom"
+        app:gradient_animate="true"
+        app:gradient_speed="slow"
+        app:layout_constraintTop_toBottomOf="@id/title_neon"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,6 +16,7 @@
 
     <item name="fragmentLinearLayout" type="id"/>
     <item name="fragmentTextView" type="id"/>
+    <item name="fragmentImageView" type="id"/>
 
     <item name="fragmentSettings" type="id"/>
 

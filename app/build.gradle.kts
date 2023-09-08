@@ -31,7 +31,7 @@ android {
         }
     }
     namespace = "com.timothy.piece"
-    compileSdk = androidLibs.versions.compileSdk.get().toInt()
+    compileSdkVersion(androidLibs.versions.compileSdk.get().toInt())
 
     defaultConfig {
         applicationId = androidLibs.versions.applicationId.get()

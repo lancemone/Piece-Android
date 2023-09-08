@@ -41,4 +41,17 @@
     <string name="text_view">TextView</string>
     <string name="screen_shot_allow">Allow Screenshot</string>
     <string name="fingerprint_unlock">Fingerprint Unlock</string>
+    <string name="forrest_gump">Forrest Gump</string>
+    <string name="forrest_gump_lines1">I don\'t know if we each have a destiny, or if we\'re all just floating around accident alike on a breeze.</string>
+    <string name="marquee_textview">Marquee TextView</string>
+    <string name="sleepless_in_seattle">Sleepless in Seattle</string>
+    <string name="neon_textview">Neon TextView</string>
+    <string name="relative_layout">RelativeLayout</string>
+    <string name="image_view">ImageView</string>
+    <string name="sleepless_in_seattle_lines1">You make millions of decisions that mean nothing and then one day your order takes out and it changes your life.</string>
+    <string name="sleepless_in_seattle_lines2">People who truly loved once are far more likely to love again.</string>
+    <string name="sleepless_in_seattle_lines3">Destiny is something we\'ve invented because we can\'t stand the fact that everything that happens is accidental.</string>
+    <string name="legend_1900_lines1">We laughed and kept saying\"see u soon\",but inside we both knew we\'d never see each other again.</string>
+    <string name="forrest_gump_lines2">Death is just a part of life, something we’re all destined to do.</string>
+    <string name="shape_able_image_view">ShapeableImageView</string>
 </resources>

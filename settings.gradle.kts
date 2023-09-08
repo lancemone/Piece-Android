@@ -1,3 +1,5 @@
+import org.gradle.api.initialization.resolve.RepositoriesMode.FAIL_ON_PROJECT_REPOS
+
 pluginManagement {
     repositories {
         google()
@@ -7,8 +9,8 @@ pluginManagement {
 }
 dependencyResolutionManagement {
     // 配置只能在当前文件配置三方依赖仓库，否则编译异常退出
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
+    this.repositoriesMode.set(FAIL_ON_PROJECT_REPOS)
+    this.repositories {
         google()
         mavenCentral()
     }
@@ -43,3 +45,4 @@ include(":library:nativelib")
 include(":library:irController")
 include(":library:authentication")
 include(":library:widget-image")
+include(":library:widget-text")

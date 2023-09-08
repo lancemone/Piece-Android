@@ -41,4 +41,17 @@
     <string name="text_view">文本控件</string>
     <string name="screen_shot_allow">允许截屏</string>
     <string name="fingerprint_unlock">指纹解锁</string>
+    <string name="forrest_gump">阿甘正传</string>
+    <string name="forrest_gump_lines1">我不懂，是我们有着各自不同的命运，还是，我们只不过都是在风中，茫然飘荡。</string>
+    <string name="marquee_textview">跑马灯文本</string>
+    <string name="sleepless_in_seattle">西雅图不眠夜</string>
+    <string name="neon_textview">霓虹文本控件</string>
+    <string name="relative_layout">相对布局</string>
+    <string name="image_view">图片控件</string>
+    <string name="sleepless_in_seattle_lines1">你每天都在做很多看起来毫无意义的决定，但某天你的某个决定就能改变你的一生。</string>
+    <string name="sleepless_in_seattle_lines2">真爱过的人很难再恋爱。</string>
+    <string name="sleepless_in_seattle_lines3">所谓命运不过是托辞，因为我们无法忍受所有事情的发生都是偶然的这样的事实。</string>
+    <string name="legend_1900_lines1">我们笑着说再见，却深知再见遥遥无期。</string>
+    <string name="forrest_gump_lines2">死亡是生命的一部分，是我们注定要做的一件事。</string>
+    <string name="shape_able_image_view">ShapeableImageView</string>
 </resources>

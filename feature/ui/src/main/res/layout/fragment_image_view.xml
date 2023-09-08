@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.timothy.widget.image.CircleImageView
+        android:layout_width="@dimen/dp_56"
+        android:layout_height="@dimen/dp_56"
+        android:id="@+id/iv_circle"
+        app:border_start_color="@color/color_green_dark"
+        app:border_end_color="@color/color_green_lighter"
+        app:border_width="@dimen/dp_1"
+        app:srcCompat="@mipmap/simple_image1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/action_circle_image"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/iv_circle">
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/action_circle_image"
+        android:orientation="vertical">
+
+        <com.timothy.widget.text.LinearGradientTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/shape_able_image_view"
+            app:gradient_startColor="@color/color_green_lighter"
+            app:gradient_midColor="@color/color_green"
+            app:gradient_endColor="@color/color_green_darker"
+            android:textAppearance="@style/t22_bold"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="@dimen/dp_10"
+            android:layout_height="@dimen/dp_15"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>

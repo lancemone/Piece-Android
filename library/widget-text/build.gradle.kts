@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.timothy.feature.ui"
+    namespace = "com.timothy.widget.text"
     compileSdk = androidLibs.versions.compileSdk.get().toInt()
 
     defaultConfig {
@@ -23,29 +23,10 @@ android {
             )
         }
     }
-
-    flavorDimensions += "version"
-
-    productFlavors {
-
-        create("EN"){
-            dimension = "version"
-        }
-
-        create("ZH"){
-            dimension = "version"
-        }
-    }
-
-    viewBinding {
-        enable = true
-    }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-
     kotlinOptions {
         jvmTarget = androidLibs.versions.targetJava.get()
     }
@@ -53,7 +34,7 @@ android {
 
 dependencies {
 
-    implementation(project(path = ":common"))
-    implementation(project(path = ":library:widget-text"))
-    implementation(project(path = ":library:widget-image"))
+    implementation(projectLibs.ktx.core)
+    implementation(projectLibs.appcompat)
+    implementation(projectLibs.material)
 }

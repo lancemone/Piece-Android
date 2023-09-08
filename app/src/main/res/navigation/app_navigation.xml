@@ -53,4 +53,8 @@
     <fragment android:id="@id/fragmentTextView"
         android:name="com.timothy.feature.ui.fragment.TextViewFragment"
         android:label="text view"/>
+
+    <fragment android:id="@id/fragmentImageView"
+        android:name="com.timothy.feature.ui.fragment.ImageViewFragment"
+        android:label="@string/image_view"/>
 </navigation>

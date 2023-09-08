@@ -43,8 +43,12 @@ class HomeUiFragment : BaseFragment() {
                 findNavController().navigate(R.id.actionToLinearLayoutFragment)
             }
 
-            actionTextView.setOnClickListener {
+            compTextView.setOnClickListener {
                 findNavController().navigate(R.id.fragmentTextView)
+            }
+
+            compImageView.setOnClickListener {
+                findNavController().navigate(R.id.fragmentImageView)
             }
         }
     }

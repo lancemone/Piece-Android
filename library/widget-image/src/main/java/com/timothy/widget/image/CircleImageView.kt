@@ -135,7 +135,7 @@ class CircleImageView: AppCompatImageView {
         val srcPath = Path()
         mPaint.reset()
         mPaint.isAntiAlias = true
-        mPaint.setXfermode(PorterDuffXfermode(PorterDuff.Mode.DST_OUT))
+        mPaint.xfermode = PorterDuffXfermode(PorterDuff.Mode.DST_OUT)
         path.addCircle(mWidth/2, mHeight/2, mRadius.toFloat(), Path.Direction.CW)
         srcPath.addRect(srcRectF, Path.Direction.CW)
         srcPath.op(path, Path.Op.DIFFERENCE)
@@ -166,7 +166,7 @@ class CircleImageView: AppCompatImageView {
                 mBorderStartColour,
                 mBorderEndColour
             )
-            mPaint.setShader(sweepGradient)
+            mPaint.shader = sweepGradient
         }
         // 画圆弧
         canvas.drawArc(
