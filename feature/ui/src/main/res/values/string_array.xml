@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinner_shapeable_image_styles">
+        <item>@string/word_default</item>
+        <item>@string/rounded_corner</item>
+        <item>@string/top_rounded_corner</item>
+        <item>@string/bottom_rounded_corner</item>
+        <item>@string/top_right_rounded_corner</item>
+        <item>@string/top_left_rounded_corner</item>
+        <item>@string/bottom_right_rounded_corner</item>
+        <item>@string/bottom_left_rounded_corner</item>
+        <item>@string/dome_shaped</item>
+        <item>@string/shape_diamond</item>
+        <item>@string/clipping_corner</item>
+        <item>@string/work_other</item>
+    </string-array>
+</resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9FAFB"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tool_bar"
+        app:titleCentered="true"
+        app:title="@string/shape_able_image_view"
+        app:navigationIcon="@drawable/ic_piece_back"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_shape_able"
+        app:srcCompat="@mipmap/ai_generated_8093991_640"
+        app:shapeAppearance="@style/ShapeableImageRoundedCorner16Style"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tool_bar"
+        android:layout_marginTop="@dimen/dp_5"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/act_sp_image_shape"
+        app:layout_constraintTop_toBottomOf="@id/iv_shape_able"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="@dimen/dp_5">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/t22_normal"
+            android:text="@string/shape"
+            android:paddingHorizontal="@dimen/dp_6"/>
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/spinner_shapeable_style"
+            android:entries="@array/spinner_shapeable_image_styles" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/check_stroke"
+        android:text="@string/stroke"
+        android:checked="false"
+        app:layout_constraintTop_toBottomOf="@id/act_sp_image_shape"/>
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/padding"
+        android:checked="false"
+        app:layout_constraintTop_toBottomOf="@id/check_stroke"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@id/navigation_feature_ui"
+    app:route="@string/route_feature_ui_graph"
+    app:startDestination="@id/fragmentAppHomeUI">
+
+    <fragment android:id="@id/fragmentAppHomeUI"
+        android:name="com.timothy.feature.ui.fragment.HomeUiFragment"
+        android:label="@string/app_name"
+        app:route="@string/route_fragment_home_ui"
+        tools:layout="@layout/fragment_home_ui">
+
+        <action android:id="@id/actionToLinearLayoutFragment"
+            app:destination="@id/fragmentLinearLayout"
+            app:popUpToSaveState="true"/>
+
+        <action android:id="@+id/actionUIToTextViewFragment"
+            app:destination="@id/fragmentTextView"/>
+
+        <action android:id="@+id/actionUIToImageView"
+            app:destination="@id/fragmentImageView"/>
+    </fragment>
+
+    <fragment android:id="@id/fragmentLinearLayout"
+        android:name="com.timothy.feature.ui.fragment.LinearLayoutFragment"
+        android:label=""
+        app:route="@string/route_fragment_linear_layout"/>
+
+    <fragment android:id="@id/fragmentTextView"
+        android:name="com.timothy.feature.ui.fragment.TextViewFragment"
+        android:label="@string/text_view"
+        app:route="@string/route_fragment_text_view"/>
+
+    <fragment android:id="@id/fragmentImageView"
+        android:name="com.timothy.feature.ui.fragment.ImageViewFragment"
+        android:label="@string/image_view"
+        app:route="@string/route_fragment_image_view"/>
+
+    <fragment android:id="@id/fragmentShapeableImageView"
+        android:name="com.timothy.feature.ui.fragment.ShapeableImageViewFragment"
+        app:route="@string/route_fragment_shapeable_image_view"/>
+</navigation>

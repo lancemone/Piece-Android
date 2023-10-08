@@ -7,6 +7,7 @@ import android.graphics.Color
 import android.graphics.LinearGradient
 import android.graphics.Shader
 import android.util.AttributeSet
+import android.util.Log
 import androidx.annotation.ColorInt
 import com.google.android.material.textview.MaterialTextView
 
@@ -32,6 +33,7 @@ class LinearGradientTextView : MaterialTextView{
         startColor = at.getColor(R.styleable.LinearGradientTextView_gradient_startColor, 0)
         midColor = at.getColor(R.styleable.LinearGradientTextView_gradient_midColor, 0)
         endColor = at.getColor(R.styleable.LinearGradientTextView_gradient_endColor, 0)
+        Log.d("Piece", "startColor=$startColor midColor=$midColor endColor=$endColor")
         updateColors()
         at.recycle()
     }
@@ -51,15 +53,15 @@ class LinearGradientTextView : MaterialTextView{
                 /* y1 = */ 0F,
                 /* colors = */ colors,
                 /* positions = */ null,
-                /* tile = */ Shader.TileMode.MIRROR
+                /* tile = */ Shader.TileMode.CLAMP
             )
         }
         super.onDraw(canvas)
     }
 
     private fun updateColors(){
-        colors = if (startColor > 0 && endColor > 0){
-            if (midColor > 0){
+        colors = if (startColor != 0 && endColor != 0){
+            if (midColor != 0){
                 intArrayOf(startColor, midColor, endColor)
             }else{
                 intArrayOf(startColor, endColor)
@@ -67,6 +69,7 @@ class LinearGradientTextView : MaterialTextView{
         }else{
             intArrayOf()
         }
+        Log.d("motao", "updateColors ${colors.size}")
     }
 
     fun setColor(@ColorInt startColor: Int, @ColorInt endColor: Int){

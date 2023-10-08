@@ -194,5 +194,28 @@
                 android:id="@+id/gravity_end"
                 android:text="@string/gravity_end"/>
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_anim1"
+                android:layout_marginEnd="@dimen/dp_5"
+                android:text="@string/shape_diamond"
+                android:background="@color/color_5C6AC4"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_anim2"
+                android:layout_marginStart="@dimen/dp_5"
+                android:text="@string/shape"
+                android:background="@color/color_5C6AC4"/>
+        </LinearLayout>
     </androidx.appcompat.widget.LinearLayoutCompat>
 </LinearLayout>

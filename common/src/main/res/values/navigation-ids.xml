@@ -2,7 +2,7 @@
 <resources>
 
     <item name="navigation_app" type="id"/>
-    <item name="navigation_linear_layout" type="id"/>
+    <item name="navigation_feature_ui" type="id"/>
     <item name="navigation_settings" type="id"/>
 
     <item name="navigation_home_ui" type="id"/>
@@ -17,6 +17,7 @@
     <item name="fragmentLinearLayout" type="id"/>
     <item name="fragmentTextView" type="id"/>
     <item name="fragmentImageView" type="id"/>
+    <item name="fragmentShapeableImageView" type="id"/>
 
     <item name="fragmentSettings" type="id"/>
 

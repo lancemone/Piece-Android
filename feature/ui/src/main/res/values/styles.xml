@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ShapeableImageRoundedCorner16Style">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/dp_16</item>
+    </style>
+    
+    <style name="ShapeableImageCircleStyle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+<!--    切角图片-->
+    <style name="ShapeableImageCutCorner16Style">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">@dimen/dp_16</item>
+    </style>
+
+    <!--菱形图片-->
+    <style name="ShapeableImageDiamondStyle">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="ShapeableImageTopRightCorner64Style">
+        <item name="cornerFamilyTopRight">rounded</item>
+        <item name="cornerSizeTopRight">@dimen/dp_64</item>
+    </style>
+
+    <style name="ShapeableImageTopLeftCorner64Style">
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/dp_64</item>
+    </style>
+
+    <style name="ShapeableImageTopCorner64Style">
+        <item name="cornerFamilyTopRight">rounded</item>
+        <item name="cornerSizeTopRight">@dimen/dp_64</item>
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/dp_64</item>
+    </style>
+
+    <style name="ShapeableImageBottomRightCorner64Style">
+        <item name="cornerFamilyBottomRight">rounded</item>
+        <item name="cornerSizeBottomRight">@dimen/dp_64</item>
+    </style>
+
+    <style name="ShapeableImageBottomLeftCorner64Style">
+        <item name="cornerFamilyBottomLeft">rounded</item>
+        <item name="cornerSizeBottomLeft">@dimen/dp_64</item>
+    </style>
+
+    <style name="ShapeableImageBottomCorner64Style">
+        <item name="cornerFamilyBottomRight">rounded</item>
+        <item name="cornerSizeBottomRight">@dimen/dp_64</item>
+        <item name="cornerFamilyBottomLeft">rounded</item>
+        <item name="cornerSizeBottomLeft">@dimen/dp_64</item>
+    </style>
+
+    <style name="ShapeableImageTopCornerStyle">
+        <item name="cornerFamilyTopRight">rounded</item>
+        <item name="cornerSizeTopRight">50%</item>
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerSizeTopLeft">50%</item>
+    </style>
+    
+    <style name="ShapeableImageRightTipsCornerStyle">
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerSizeTopLeft">50%</item>
+        <item name="cornerFamilyBottomLeft">rounded</item>
+        <item name="cornerSizeBottomLeft">50%</item>
+        <item name="cornerFamilyTopRight">cut</item>
+        <item name="cornerSizeTopRight">50%</item>
+        <item name="cornerFamilyBottomRight">cut</item>
+        <item name="cornerSizeBottomRight">50%</item>
+    </style>
+</resources>

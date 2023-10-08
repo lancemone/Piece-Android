@@ -54,4 +54,19 @@
     <string name="legend_1900_lines1">我们笑着说再见，却深知再见遥遥无期。</string>
     <string name="forrest_gump_lines2">死亡是生命的一部分，是我们注定要做的一件事。</string>
     <string name="shape_able_image_view">ShapeableImageView</string>
+    <string name="word_default">默认</string>
+    <string name="rounded_corner">圆角</string>
+    <string name="shape">形状</string>
+    <string name="stroke">描边</string>
+    <string name="padding">填充</string>
+    <string name="top_rounded_corner">顶部圆角</string>
+    <string name="bottom_rounded_corner">底部圆角</string>
+    <string name="top_right_rounded_corner">右上角圆角</string>
+    <string name="top_left_rounded_corner">左上角圆角</string>
+    <string name="bottom_right_rounded_corner">右下角圆角</string>
+    <string name="bottom_left_rounded_corner">左下角圆角</string>
+    <string name="dome_shaped">圆顶状</string>
+    <string name="shape_diamond">菱形</string>
+    <string name="clipping_corner">边角裁切</string>
+    <string name="work_other">其他</string>
 </resources>

@@ -2,6 +2,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation" translatable="false">
     <string name="route_fragment_home_ui" translatable="false">/app/home/ui_fragment</string>
+    <string name="route_feature_ui_graph">/feature/ui/graph_root</string>
     <string name="route_fragment_linear_layout" translatable="false">/feature/ui/fragment_linear_layout</string>
+    <string name="route_fragment_relative_layout" translatable="false">/feature/ui/fragment_relative_layout</string>
+    <string name="route_fragment_text_view" translatable="false">/feature/ui/fragment_text_view</string>
+    <string name="route_fragment_image_view" translatable="false">/feature/ui/fragment_image_view</string>
+    <string name="route_fragment_shapeable_image_view" translatable="false">/feature/ui/fragment_shapeable_image_view</string>
     <string name="route_fragment_authentication" translatable="false">/library/authentication/authentication_fragment</string>
 </resources>

@@ -1,91 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="@dimen/dp_16">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/layout"
-        android:textAppearance="@style/t22_bold"
-        android:textColor="@color/md_theme_tertiary"
-        android:paddingVertical="@dimen/dp_5"
-        android:paddingHorizontal="@dimen/dp_2"
-        android:gravity="center"
-        app:drawableStartCompat="@drawable/baseline_arrow_right_24"
-        android:drawablePadding="@dimen/dp_3"
-        android:drawableTint="@color/md_theme_tertiary"/>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <ExpandableListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:divider="@drawable/line_1dp_secondary_color"
-        app:showDividers="middle">
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_linear"
-            android:text="@string/linear_layout"
-            android:textAppearance="@style/t16_normal"
-            android:gravity="start|center_vertical"
-            android:paddingVertical="@dimen/dp_5"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_relative"
-            android:text="@string/relative_layout"
-            android:textAppearance="@style/t16_normal"
-            android:gravity="start|center_vertical"
-            android:paddingVertical="@dimen/dp_5"
-            app:layout_constraintTop_toBottomOf="@id/tv_linear"/>
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/components"
-        android:textAppearance="@style/t22_bold"
-        android:textColor="@color/md_theme_tertiary"
-        android:paddingVertical="@dimen/dp_5"
-        android:paddingHorizontal="@dimen/dp_2"
-        android:gravity="center"
-        app:drawableStartCompat="@drawable/baseline_arrow_right_24"
-        android:drawablePadding="@dimen/dp_3"
-        android:drawableTint="@color/md_theme_tertiary"/>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:divider="@drawable/line_1dp_secondary_color"
-        app:showDividers="middle">
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/comp_text_view"
-            android:text="@string/text_view"
-            android:textAppearance="@style/t16_normal"
-            android:gravity="start|center_vertical"
-            android:paddingVertical="@dimen/dp_5"
-            app:layout_constraintTop_toBottomOf="@id/tv_linear"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/comp_image_view"
-            android:text="@string/image_view"
-            android:textAppearance="@style/t16_normal"
-            android:gravity="start|center_vertical"
-            android:paddingVertical="@dimen/dp_5"
-            app:layout_constraintTop_toBottomOf="@id/tv_linear"/>
-    </androidx.appcompat.widget.LinearLayoutCompat>
-</androidx.appcompat.widget.LinearLayoutCompat>
+        android:id="@+id/exp_list_view"
+        android:groupIndicator="@null"
+        android:childDivider="@color/transparent"
+        android:scrollbars="none"
+        android:divider="@color/md_theme_secondary"
+        android:dividerHeight="@dimen/dp_1"
+        android:headerDividersEnabled="false"
+        android:footerDividersEnabled="false"/>
+</FrameLayout>
