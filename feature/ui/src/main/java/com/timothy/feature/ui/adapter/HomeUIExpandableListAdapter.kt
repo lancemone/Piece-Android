@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.BaseExpandableListAdapter
 import android.widget.ExpandableListView
 import android.widget.SimpleExpandableListAdapter
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.isVisible
@@ -89,19 +90,24 @@ class HomeUIExpandableListAdapter(context: Context, items: MutableList<HomeUIIte
     }
 
     override fun getGroupView(groupPosition: Int, isExpanded: Boolean, convertView: View?, parent: ViewGroup?): View {
-        val groupView = LayoutItemUiHomeGroupBinding.inflate(LayoutInflater.from(mContext), parent, false)
-        groupView.tvTitle.text = mData[groupPosition].title
+        val groupView = convertView
+            ?: LayoutItemUiHomeGroupBinding.inflate(LayoutInflater.from(mContext), parent, false).root
+        val tvTitle: AppCompatTextView? = groupView.findViewById(R.id.tv_title)
+        tvTitle?.text = mData[groupPosition].title
+        val ivIndicator: AppCompatImageView? = groupView.findViewById(R.id.iv_indicator)
         // 如果展开则顺时针旋转90°选择，否则不旋转
-        groupView.ivIndicator.rotation = if (isExpanded) 90F else 0F
-        return groupView.root
+        ivIndicator?.rotation = if (isExpanded) 90F else 0F
+        return groupView
     }
 
     override fun getChildView(groupPosition: Int, childPosition: Int, isLastChild: Boolean, convertView: View?, parent: ViewGroup?): View {
-        val childView = LayoutItemUiHomeChildBinding.inflate(LayoutInflater.from(mContext), parent, false)
-        childView.tvTitle.text = mData[groupPosition].childItem?.get(childPosition)?.title
-        childView.bottomDivider.isVisible = !isLastChild
-        childView.root.setTag(R.id.id_ui_home_child_tag, mData[groupPosition].childItem?.get(childPosition)?.router)
-        return childView.root
+        val childView = convertView ?: LayoutItemUiHomeChildBinding.inflate(LayoutInflater.from(mContext), parent, false).root
+        val tvTitle: AppCompatTextView? = childView.findViewById(R.id.tv_title)
+        tvTitle?.text = mData[groupPosition].childItem?.get(childPosition)?.title
+        val bottomDivider: View? = childView.findViewById(R.id.bottom_divider)
+        bottomDivider?.isVisible = !isLastChild
+        childView.setTag(R.id.id_ui_home_child_tag, mData[groupPosition].childItem?.get(childPosition)?.router)
+        return childView
     }
 
     /**
