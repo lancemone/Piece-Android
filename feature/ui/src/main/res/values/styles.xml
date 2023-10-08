@@ -63,6 +63,12 @@
         <item name="cornerFamilyTopLeft">rounded</item>
         <item name="cornerSizeTopLeft">50%</item>
     </style>
+
+    <style name="ShapeableImageLeafShapeStyle">
+        <item name="shapeCornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">50%</item>
+        <item name="cornerSizeBottomRight">50%</item>
+    </style>
     
     <style name="ShapeableImageRightTipsCornerStyle">
         <item name="cornerFamilyTopLeft">rounded</item>

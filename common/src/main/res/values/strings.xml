@@ -56,7 +56,7 @@
     <string name="shape_able_image_view">ShapeableImageView</string>
     <string name="word_default">Default</string>
     <string name="rounded_corner">Rounded Corner</string>
-    <string name="shape">Shape</string>
+    <string name="shape_appearance">Shape Appearance</string>
     <string name="stroke">Stroke</string>
     <string name="padding">Padding</string>
     <string name="top_rounded_corner">Top Rounded Corner</string>
@@ -69,4 +69,8 @@
     <string name="shape_diamond">Diamond</string>
     <string name="clipping_corner">Clipping Corner</string>
     <string name="work_other">Other</string>
+    <string name="circle">Circle</string>
+    <string name="leaf_shape">Leaf Shape</string>
+    <string name="word_none">None</string>
+    <string name="shape_appearance_overlay">shapeAppearanceOverlay</string>
 </resources>

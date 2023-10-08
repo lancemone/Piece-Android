@@ -214,7 +214,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_anim2"
                 android:layout_marginStart="@dimen/dp_5"
-                android:text="@string/shape"
+                android:text="@string/shape_appearance"
                 android:background="@color/color_5C6AC4"/>
         </LinearLayout>
     </androidx.appcompat.widget.LinearLayoutCompat>
