@@ -19,6 +19,7 @@ import android.util.AttributeSet
 import androidx.annotation.ColorInt
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.graphics.drawable.toBitmap
+import androidx.core.view.updatePadding
 import kotlin.math.min
 
 
@@ -79,6 +80,10 @@ class CircleImageView: AppCompatImageView {
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        if (mBorderWidth > 0){
+            val paddingSize = mBorderWidth / 2
+            updatePadding(paddingLeft + paddingSize, paddingTop + paddingSize, paddingRight + paddingSize, paddingBottom + paddingSize)
+        }
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
         val diameter = min(measuredWidth, measuredHeight)
         mRadius = diameter / 2
@@ -159,7 +164,7 @@ class CircleImageView: AppCompatImageView {
         mPaint.strokeWidth = mBorderWidth.toFloat()
         mPaint.isAntiAlias = true
         mPaint.flags = Paint.ANTI_ALIAS_FLAG
-        if (mBorderStartColour > 0 && mBorderEndColour > 0) {
+        if (mBorderStartColour != 0 && mBorderEndColour != 0) {
             val sweepGradient = SweepGradient(
                 mCircleRect.centerX(),
                 mCircleRect.centerY(),

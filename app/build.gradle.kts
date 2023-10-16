@@ -10,8 +10,8 @@ plugins {
     alias(projectLibs.plugins.kotlinAndroid)
     alias(projectLibs.plugins.ksp)
     alias(projectLibs.plugins.kotlinParcelize)
-//    id ("therouter")
     alias(projectLibs.plugins.navigationSafeArgsPlugin)
+//    id ("therouter")
 }
 
 android {
@@ -31,7 +31,7 @@ android {
         }
     }
     namespace = "com.timothy.piece"
-    compileSdkVersion(androidLibs.versions.compileSdk.get().toInt())
+    compileSdk = androidLibs.versions.compileSdk.get().toInt()
 
     defaultConfig {
         applicationId = androidLibs.versions.applicationId.get()

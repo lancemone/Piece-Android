@@ -2,7 +2,7 @@
 
 buildscript {
     dependencies {
-        classpath(projectLibs.buildGradle)
+        classpath (projectLibs.androidx.navigationSafeArgsPlugin)
     }
 }
 

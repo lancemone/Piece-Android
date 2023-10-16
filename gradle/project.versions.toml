@@ -1,15 +1,14 @@
 [versions]
-gradle = "8.1.1"
-android-application = "8.1.1"
+android-application = "8.1.2"
 kotlin-android = "1.9.0"
 kotlin-jvm = "1.9.0"
-core-ktx = "1.10.1"
+core-ktx = "1.12.0"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
 espresso-core = "3.5.1"
 appcompat = "1.6.1"
-material = "1.9.0"
-lifecycle = "2.6.1"
+material = "1.10.0"
+lifecycle = "2.6.2"
 ksp = "1.9.0-1.0.11"
 kapt = "1.8.20"
 theRouter = "1.1.4-rc6"
@@ -17,13 +16,12 @@ coil = "2.4.0"
 okhttp3 = "4.11.0"
 retrofit2 = "2.9.0"
 kotlin-coroutines = "1.7.3"
-navigation = '2.7.1'
+navigation = '2.7.4'
 
 [libraries]
-buildGradle = { module = "com.android.tools.build:gradle", version.ref = "gradle"}
 ktx-core = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
 ktx-lifecycle = {module = "androidx.lifecycle:lifecycle-common", version.ref = "lifecycle"}
-ktx-activity = 'androidx.activity:activity-ktx:1.7.2'
+ktx-activity = 'androidx.activity:activity-ktx:1.8.0'
 ktx-fragment = 'androidx.fragment:fragment-ktx:1.6.1'
 ktx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin-coroutines"}
 ktx-coroutinesAndroid = {module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlin-coroutines"}
@@ -36,7 +34,7 @@ constraintlayout = 'androidx.constraintlayout:constraintlayout:2.1.4'
 coordinatorlayout = 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
 theRouter-router = {module = "cn.therouter:router", version.ref = "theRouter"}
 theRouter-apt = {module = "cn.therouter:apt", version.ref = "theRouter"}
-androidx-annotation = 'androidx.annotation:annotation:1.6.0'
+androidx-annotation = 'androidx.annotation:annotation:1.7.0'
 androidx-startup = 'androidx.startup:startup-runtime:1.1.1'
 androidx-navigationFragment = {module = 'androidx.navigation:navigation-fragment-ktx', version.ref = 'navigation'}
 androidx-navigationUI = {module = 'androidx.navigation:navigation-ui-ktx', version.ref = 'navigation'}
@@ -72,7 +70,7 @@ kotlinJvm = {id = "org.jetbrains.kotlin.jvm", version.ref="kotlin-jvm"}
 kotlinKapt = {id = "org.jetbrains.kotlin.kapt", version.ref = "kapt"}
 therouter = { id = "cn.therouter", version.ref = "theRouter"}
 kotlinParcelize = {id = "org.jetbrains.kotlin.plugin.parcelize", version = "1.8.20"}
-navigationSafeArgsPlugin = {id = 'androidx.navigation.safeargs', version.ref = 'navigation'}
+navigationSafeArgsPlugin = {id = 'androidx.navigation.safeargs.kotlin', version.ref = "navigation"}
 
 [bundles]
 androidCore = ['appcompat', 'material', 'recycleview', 'constraintlayout', 'androidx-annotation']

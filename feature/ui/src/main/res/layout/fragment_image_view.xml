@@ -3,20 +3,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingHorizontal="@dimen/dp_16"
+    android:paddingTop="@dimen/dp_16"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <com.timothy.widget.text.LinearGradientTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title_circle_image"
+        android:text="@string/circle_image_view"
+        android:gravity="center"
+        app:gradient_startColor="@color/color_green_light"
+        app:gradient_midColor="@color/color_green"
+        app:gradient_endColor="@color/color_green_darker"
+        android:textAppearance="@style/t22_bold"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <com.timothy.widget.image.CircleImageView
-        android:layout_width="@dimen/dp_56"
-        android:layout_height="@dimen/dp_56"
+        android:layout_width="@dimen/dp_86"
+        android:layout_height="@dimen/dp_86"
         android:id="@+id/iv_circle"
         app:border_start_color="@color/color_green_dark"
         app:border_end_color="@color/color_green_lighter"
         app:border_width="@dimen/dp_1"
         app:srcCompat="@mipmap/simple_image1"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/dp_8"
+        app:layout_constraintTop_toBottomOf="@id/title_circle_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
-
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -25,18 +38,4 @@
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/iv_circle">
     </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <com.timothy.widget.text.LinearGradientTextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/title_sp_image"
-        android:text="@string/shape_able_image_view"
-        android:gravity="center"
-        app:gradient_startColor="@color/color_green_light"
-        app:gradient_midColor="@color/color_green"
-        app:gradient_endColor="@color/color_green_darker"
-        android:textAppearance="@style/t22_bold"
-        app:layout_constraintTop_toBottomOf="@id/action_circle_image"/>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
